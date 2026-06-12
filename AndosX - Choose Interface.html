@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AndosX — Choose an interface</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;background:#0c0c0d;color:#fff;-webkit-font-smoothing:antialiased;min-height:100vh;}
+.mono{font-family:"SF Mono",ui-monospace,Menlo,monospace;}
+.top{text-align:center;padding:54px 24px 30px;}
+.brand{display:inline-flex;align-items:center;gap:11px;font-weight:700;font-size:22px;letter-spacing:-.02em;margin-bottom:24px;}
+.brand .mk{width:30px;height:30px;border-radius:9px;background:linear-gradient(150deg,#ff5424,#b5300f);display:grid;place-items:center;font-size:16px;font-weight:800;box-shadow:0 0 22px -4px #ff5a1f;}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:#9a9792;font-family:"SF Mono",ui-monospace,Menlo,monospace;margin-bottom:18px;}
+.eyebrow .dot{width:8px;height:8px;border-radius:50%;background:#ff5424;box-shadow:0 0 14px #ff5a1f;}
+h1{font-size:clamp(30px,5vw,52px);letter-spacing:-.03em;line-height:1.05;max-width:16ch;margin:0 auto;}
+h1 .grey{color:#56555a;}
+.top p{color:#9a9792;font-size:15px;margin-top:16px;}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:1180px;margin:30px auto 70px;padding:0 24px;}
+@media(max-width:880px){.grid{grid-template-columns:1fr;}}
+.card{position:relative;border-radius:20px;overflow:hidden;border:1px solid #252528;text-decoration:none;color:inherit;transition:transform .3s,border-color .3s;display:flex;flex-direction:column;}
+.card:hover{transform:translateY(-6px);border-color:#3a393c;}
+.thumb{height:300px;position:relative;overflow:hidden;}
+.thumb .label{position:absolute;left:16px;top:16px;z-index:3;font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;background:rgba(0,0,0,.5);backdrop-filter:blur(4px);padding:7px 12px;border-radius:30px;border:1px solid rgba(255,255,255,.12);}
+/* light thumb mock */
+.thumb.lite{background:#f3f1ec;}
+.lite-mock{position:absolute;inset:20px;border-radius:12px;overflow:hidden;background:#1a1a18;display:flex;flex-direction:column;justify-content:flex-end;padding:18px;}
+.lite-mock::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(135deg,rgba(255,255,255,.04) 0 2px,transparent 2px 11px),linear-gradient(120deg,#2b2a27,#3a3833);}
+.lite-mock .t{position:relative;z-index:2;color:#fff;font-size:22px;font-weight:700;letter-spacing:-.02em;line-height:1;}
+.lite-mock .t span{color:#ec4514;}
+/* dark thumb mock */
+.thumb.dark{background:#0c0c0d;}
+.dark-mock{position:absolute;inset:0;display:grid;place-items:center;}
+.dark-mock::before{content:"";position:absolute;top:-20%;left:50%;transform:translateX(-50%);width:420px;height:320px;background:radial-gradient(circle,rgba(255,84,36,.3),transparent 62%);filter:blur(14px);}
+.dark-mock .t{position:relative;z-index:2;text-align:center;font-size:30px;font-weight:700;letter-spacing:-.03em;line-height:.95;}
+.dark-mock .t .g{color:#48474a;}
+.dark-mock .t .e{color:#ff5424;}
+.meta{padding:24px 24px 26px;background:#141416;}
+.meta h2{font-size:22px;font-weight:600;letter-spacing:-.02em;display:flex;align-items:center;justify-content:space-between;}
+.meta h2 .go{width:38px;height:38px;border-radius:50%;border:1px solid #2f2e31;display:grid;place-items:center;font-size:16px;transition:background .2s;}
+.card:hover .meta h2 .go{background:#ff5424;border-color:#ff5424;}
+.meta p{color:#9a9792;font-size:14px;line-height:1.55;margin-top:10px;}
+.tags{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap;}
+.tags span{font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:.04em;color:#bdbab4;border:1px solid #2f2e31;padding:5px 10px;border-radius:30px;}
+.foot{text-align:center;color:#5f5d59;font-size:12px;padding-bottom:40px;}
+</style>
+</head>
+<body>
+  <div class="top">
+    <div class="brand"><span class="mk">A</span>AndosX</div>
+    <div><span class="eyebrow"><span class="dot"></span>Two directions to choose from</span></div>
+    <h1>Pick the interface that <span class="grey">feels like AndosX.</span></h1>
+    <p>Same product, same clear offering — two distinct visual systems.</p>
+  </div>
+
+  <div class="grid">
+    <a class="card" href="AndosX — Interface A (Editorial).html">
+      <div class="thumb lite">
+        <span class="label">Interface A</span>
+        <div class="lite-mock"><div class="t">The AI that builds the <span>systems</span> your business runs on.</div></div>
+      </div>
+      <div class="meta">
+        <h2>Editorial Light <span class="go">↗</span></h2>
+        <p>Bright, editorial and trust-forward — big statements, a stat grid and a dark services block. Calm and premium.</p>
+        <div class="tags"><span>Light</span><span>Editorial</span><span>Stat-driven</span></div>
+      </div>
+    </a>
+
+    <a class="card" href="AndosX — Interface B (Kinetic).html">
+      <div class="thumb dark">
+        <span class="label">Interface B</span>
+        <div class="dark-mock"><div class="t">We build the<br><span class="g">systems you</span><br>run <span class="e">on.</span></div></div>
+      </div>
+      <div class="meta">
+        <h2>Kinetic Dark <span class="go">↗</span></h2>
+        <p>Bold, high-energy black canvas with orange glow and motion — oversized type and a kinetic card grid. Confident and modern.</p>
+        <div class="tags"><span>Dark</span><span>Kinetic</span><span>Glow accent</span></div>
+      </div>
+    </a>
+  </div>
+
+  <div class="foot mono">ANDOSX · CHOOSE A DIRECTION · 2026</div>
+</body>
+</html>
