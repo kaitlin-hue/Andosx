@@ -26,13 +26,28 @@ body{
 }
 .serif{font-family:Georgia,"Times New Roman",serif;}
 .mono{font-family:"SF Mono",ui-monospace,Menlo,monospace;}
+.hand{font-family:"Segoe Print","Bradley Hand","Noteworthy","Comic Sans MS",cursive;}
 .wrap{max-width:1200px;margin:0 auto;padding:0 28px;}
 a{color:inherit;text-decoration:none;}
 img{display:block;max-width:100%;}
 
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.035;background-image:radial-gradient(circle at 1px 1px,#000 1px,transparent 0);background-size:3px 3px;}
+
 .eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);font-weight:600;font-family:"SF Mono",ui-monospace,Menlo,monospace;}
 .eyebrow .dot{width:8px;height:8px;background:var(--green);border-radius:50%;display:inline-block;box-shadow:0 0 12px rgba(47,82,51,.5);}
 .eyebrow.light{color:#fff;}
+
+/* ---------- personality accents ---------- */
+.stamp{position:absolute;top:26px;right:30px;width:100px;height:100px;z-index:3;}
+.stamp svg{width:100%;height:100%;animation:spin 18s linear infinite;}
+.stamp-center{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;}
+@keyframes spin{to{transform:rotate(360deg);}}
+@media(prefers-reduced-motion:reduce){.stamp svg{animation:none;}}
+@media(max-width:700px){.stamp{display:none;}}
+
+.tag-note{display:inline-block;margin-top:20px;background:var(--paper);color:var(--ink);padding:12px 18px;border-radius:3px;transform:rotate(-3deg);box-shadow:0 10px 22px rgba(0,0,0,.3);font-size:15px;line-height:1.3;}
+
+.cta-hand{margin-top:20px;font-size:18px;color:#e7dfc4;transform:rotate(-2deg);display:inline-block;}
 
 /* ---------- placeholder photo slot ---------- */
 .ph-photo{
@@ -98,13 +113,17 @@ section{padding:92px 0;}
 
 /* work / portfolio */
 .work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px;}
-.work-card{border-radius:16px;overflow:hidden;background:var(--white);border:1px solid var(--line);}
-.work-card .media{height:300px;}
+.work-card{position:relative;border-radius:16px;overflow:hidden;background:var(--white);border:1px solid var(--line);transition:transform .3s ease,box-shadow .3s ease;}
+.work-card:nth-child(2){margin-top:38px;}
+.work-card:hover{transform:rotate(-1deg) translateY(-4px);box-shadow:0 22px 44px -22px rgba(20,20,15,.4);z-index:2;}
+.work-card .media{position:relative;height:300px;}
+.work-card .idx{position:absolute;top:14px;left:14px;z-index:2;font-style:italic;font-size:13px;color:#fff;background:rgba(21,20,15,.4);padding:4px 11px;border-radius:20px;font-family:Georgia,serif;}
 .work-card .info{padding:20px;}
+.work-card .idx-cap{display:block;font-style:italic;font-size:13px;color:var(--green-2);margin-bottom:6px;font-family:Georgia,serif;}
 .work-card h3{font-size:17px;font-weight:700;margin-bottom:6px;}
 .work-card p{font-size:13px;color:var(--mut);line-height:1.5;}
 .work-card .tag{display:inline-block;margin-top:12px;font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--green-2);}
-@media(max-width:880px){.work-grid{grid-template-columns:1fr;}}
+@media(max-width:880px){.work-grid{grid-template-columns:1fr;}.work-card:nth-child(2){margin-top:0;}}
 
 /* process */
 .proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:52px;}
@@ -189,11 +208,21 @@ footer{padding:60px 0 40px;}
   <div class="wrap">
     <div class="hero-card">
       <div class="bg"><div class="ph-photo"><span class="mono lbl">Hero photograph</span><span class="hint">Drop a finished project image here</span></div></div>
+      <div class="stamp" aria-hidden="true">
+        <svg viewBox="0 0 200 200">
+          <defs><path id="stampCircle" d="M100,100 m-82,0 a82,82 0 1,1 164,0 a82,82 0 1,1 -164,0" /></defs>
+          <text font-size="12.5" letter-spacing="3" fill="#fff" font-family="SF Mono, ui-monospace, Menlo, monospace">
+            <textPath href="#stampCircle">SITE VISITS OPEN · PERTH, WA · SITE VISITS OPEN · PERTH, WA ·</textPath>
+          </text>
+        </svg>
+        <div class="stamp-center">✦</div>
+      </div>
       <div class="hero-top">
         <span class="eyebrow light"><span class="dot"></span>Landscape design &amp; construction · Perth, WA</span>
       </div>
       <div class="hero-mid">
         <h1>One team, start to finish.</h1>
+        <div class="tag-note hand">no subbies.<br>never have.</div>
       </div>
       <div class="hero-foot">
         <p class="hero-sub">The same team that designs your garden lays the stone and plants the beds. Built for Perth homeowners who've already put the work into the house and expect the garden to keep up.</p>
@@ -223,24 +252,27 @@ footer{padding:60px 0 40px;}
     </div>
     <div class="work-grid reveal">
       <div class="work-card">
-        <div class="media"><div class="ph-photo"><span class="mono lbl">Project photo</span><span class="hint">Drop image 1 here</span></div></div>
+        <div class="media"><span class="idx">01</span><div class="ph-photo"><span class="mono lbl">Project photo</span><span class="hint">Drop image 1 here</span></div></div>
         <div class="info">
+          <span class="idx-cap">Project 01</span>
           <h3>Project name to be confirmed</h3>
           <p>One line on the brief and what was delivered, once the job is named.</p>
           <span class="tag">Suburb TBD</span>
         </div>
       </div>
       <div class="work-card">
-        <div class="media"><div class="ph-photo"><span class="mono lbl">Project photo</span><span class="hint">Drop image 2 here</span></div></div>
+        <div class="media"><span class="idx">02</span><div class="ph-photo"><span class="mono lbl">Project photo</span><span class="hint">Drop image 2 here</span></div></div>
         <div class="info">
+          <span class="idx-cap">Project 02</span>
           <h3>Project name to be confirmed</h3>
           <p>One line on the brief and what was delivered, once the job is named.</p>
           <span class="tag">Suburb TBD</span>
         </div>
       </div>
       <div class="work-card">
-        <div class="media"><div class="ph-photo"><span class="mono lbl">Project photo</span><span class="hint">Drop image 3 here</span></div></div>
+        <div class="media"><span class="idx">03</span><div class="ph-photo"><span class="mono lbl">Project photo</span><span class="hint">Drop image 3 here</span></div></div>
         <div class="info">
+          <span class="idx-cap">Project 03</span>
           <h3>Project name to be confirmed</h3>
           <p>One line on the brief and what was delivered, once the job is named.</p>
           <span class="tag">Suburb TBD</span>
@@ -293,6 +325,7 @@ footer{padding:60px 0 40px;}
         <a href="mailto:hello@beckslandscaping.com.au" class="btn primary">Book a site visit <span class="arr">↗</span></a>
         <a href="#work" class="btn ghost">See the work again</a>
       </div>
+      <p class="cta-hand hand">→ we ring you back, same day.</p>
       <p class="cta-note mono">Enquiry email is a placeholder pending Beck's real contact details.</p>
     </div>
   </div>
