@@ -59,7 +59,7 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;o
 .ph-photo .hint{font-size:10px;letter-spacing:.05em;color:#7a7566;text-transform:uppercase;max-width:22ch;}
 
 /* ---------- nav ---------- */
-header.nav{position:sticky;top:0;z-index:50;backdrop-filter:saturate(140%) blur(8px);background:rgba(255,255,255,.86);border-bottom:1px solid var(--line);}
+header.nav{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line);}
 .nav-in{display:flex;align-items:center;justify-content:space-between;height:72px;}
 .brand .word{font-weight:700;font-size:21px;letter-spacing:-.02em;}
 .brand .word span{color:var(--green);}
@@ -88,8 +88,10 @@ nav.links a:hover{opacity:1;}
 .btn.primary:hover{background:var(--green-2);transform:translateY(-1px);}
 .btn.ghost{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.28);}
 .btn.ghost:hover{background:rgba(255,255,255,.2);}
-.btn .arr{transition:transform .2s;}
+.btn .arr{display:inline-flex;transition:transform .2s;}
 .btn:hover .arr{transform:translate(2px,-2px);}
+.nav-cta .arr{display:inline-flex;margin-left:2px;}
+.ico-arr{display:block;}
 
 /* ---------- proof strip ---------- */
 .proof{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:20px 0;margin-top:24px;}
@@ -219,7 +221,7 @@ footer{padding:60px 0 40px;}
       <a href="#how">How we work</a>
       <a href="#team">The team</a>
     </nav>
-    <a href="#cta" class="nav-cta">Book a site visit ↗</a>
+    <a href="#cta" class="nav-cta">Book a site visit <span class="arr"><svg class="ico-arr" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="8 7 17 7 17 16"/></svg></span></a>
   </div>
 </header>
 
@@ -247,7 +249,7 @@ footer{padding:60px 0 40px;}
       <div class="hero-foot">
         <p class="hero-sub">The same team that designs your garden lays the stone and plants the beds. Built for Perth homeowners who've already put the work into the house and expect the garden to keep up.</p>
         <div class="btn-row">
-          <a href="#cta" class="btn primary">Book a site visit <span class="arr">↗</span></a>
+          <a href="#cta" class="btn primary">Book a site visit <span class="arr"><svg class="ico-arr" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="8 7 17 7 17 16"/></svg></span></a>
           <a href="#work" class="btn ghost">See the work</a>
         </div>
       </div>
@@ -388,7 +390,7 @@ footer{padding:60px 0 40px;}
       <span class="eyebrow light"><span class="dot"></span>Get a site visit</span>
       <h2>Tell us about your garden. We'll come and look at it.</h2>
       <div class="btn-row">
-        <a href="mailto:hello@beckslandscaping.com.au" class="btn primary">Book a site visit <span class="arr">↗</span></a>
+        <a href="mailto:hello@beckslandscaping.com.au" class="btn primary">Book a site visit <span class="arr"><svg class="ico-arr" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="8 7 17 7 17 16"/></svg></span></a>
         <a href="#work" class="btn ghost">See the work again</a>
       </div>
       <p class="cta-note mono">Enquiry email is a placeholder pending Beck's real contact details.</p>
