@@ -59,7 +59,7 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;o
 .ph-photo .hint{font-size:10px;letter-spacing:.05em;color:#7a7566;text-transform:uppercase;max-width:22ch;}
 
 /* ---------- nav ---------- */
-header.nav{position:sticky;top:0;z-index:50;backdrop-filter:saturate(140%) blur(8px);background:rgba(243,239,230,.86);border-bottom:1px solid var(--line);}
+header.nav{position:sticky;top:0;z-index:50;backdrop-filter:saturate(140%) blur(8px);background:rgba(255,255,255,.86);border-bottom:1px solid var(--line);}
 .nav-in{display:flex;align-items:center;justify-content:space-between;height:72px;}
 .brand .word{font-weight:700;font-size:21px;letter-spacing:-.02em;}
 .brand .word span{color:var(--green);}
@@ -97,7 +97,7 @@ nav.links a:hover{opacity:1;}
 .proof-lab{display:flex;align-items:center;gap:12px;max-width:460px;}
 .proof-lab .star{color:var(--green);font-size:16px;}
 .proof-lab p{font-size:13px;color:var(--mut);line-height:1.4;}
-.proof-tbd{font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.06em;color:var(--green-2);background:#e7dfc4;border:1px dashed #b9ae86;padding:6px 12px;border-radius:8px;}
+.proof-tbd{font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.06em;color:var(--green-2);background:#fff;border:1px dashed var(--line);padding:6px 12px;border-radius:8px;}
 
 /* ---------- services scroll ---------- */
 .svc-scroll{position:relative;height:320vh;}
@@ -136,7 +136,7 @@ section{padding:92px 0;}
 
 /* numbers */
 .num-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;margin-top:48px;}
-.num h3{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:clamp(46px,6vw,80px);font-weight:700;letter-spacing:-.03em;font-variant-numeric:tabular-nums;}
+.num h3{font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:clamp(40px,5.4vw,72px);font-weight:700;letter-spacing:-.02em;font-variant-numeric:tabular-nums;}
 .num h3.tbd{font-size:28px;color:var(--mut);font-family:"SF Mono",ui-monospace,Menlo,monospace;letter-spacing:.04em;}
 .num .ln{height:1px;border-top:1px solid var(--line);margin:16px 0 14px;}
 .num p{font-size:13.5px;line-height:1.5;color:var(--mut);max-width:24ch;}
