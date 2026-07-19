@@ -101,6 +101,7 @@ nav.links a:hover{opacity:1;}
 .proof-lab .star{color:var(--green);font-size:16px;}
 .proof-lab p{font-size:13px;color:var(--mut);line-height:1.4;}
 .proof-tbd{font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.06em;color:var(--green-2);background:#fff;border:1px dashed var(--line);padding:6px 12px;border-radius:8px;}
+.proof-area{font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.06em;color:var(--green-2);background:#fff;border:1px solid var(--line);padding:6px 12px;border-radius:8px;}
 
 /* ---------- services scroll ---------- */
 .svc-scroll{position:relative;height:320vh;}
@@ -216,23 +217,20 @@ footer{padding:60px 0 40px;}
   business since 2002), the wordmark (real logo, pulled from an existing Beck's
   project microsite), one real project (Burwood Street, Nedlands), the before/after
   slider content (real transformation photos, but only screenshot-thumbnail
-  resolution, so they read soft at this display size), and the enquiry decision
-  (project intake form as primary CTA, hello@ email as the working fallback).
+  resolution, so they read soft at this display size), the enquiry decision
+  (project intake form as primary CTA, hello@ email as the working fallback), the
+  real intake form URL (form.jotform.com/260408375301046), phone (Greg, 0438 456
+  320, live as a tel: link in the footer), service area (Perth metro, reflected in
+  the footer, the proof strip chip, and the numbers stat), and hosting (Netlify).
   STILL OPEN, and blocking a real launch, not just cosmetic:
-   - Phone number (footer currently says "to be confirmed" — a real visitor cannot
-     call the business right now)
-   - The actual project intake form URL (the primary CTA button currently points
-     nowhere, href="#")
-   - Confirmed suburbs served (Nedlands is one project's location, not the same as
-     the full service area — the suburbs stat and proof chip are still TBD)
    - Two more real project names/photos, and a proper photo of Greg and the crew
    - Higher-resolution versions of the before/after photos
    - The services list (a reasonable landscaping menu, not yet checked against what
      Beck's actually offers or subcontracts out)
-   - A hosting decision. Domain is confirmed but this is still a standalone HTML
-     file with nowhere to live — it needs a host (Netlify, the existing host behind
-     the live beckslandscaping.com.au site, or wherever Beck's already hosts its
-     other project microsites) before "deploy" means anything real.
+   - Actually deploying to Netlify. Nothing here creates the Netlify site or wires
+     up the domain — that's a manual step (drag-and-drop this repo's index.html
+     into Netlify, or connect the kaitlin-hue/andosx repo and point it at this
+     branch, then attach www.beckslandscaping.com.au once it's live).
 -->
 
 <header class="nav">
@@ -287,7 +285,7 @@ footer{padding:60px 0 40px;}
 <div class="proof">
   <div class="wrap proof-in">
     <div class="proof-lab"><span class="star">✦</span><p>Landscape design, construction and planting, run by Greg Beck and his crew since 2002.</p></div>
-    <span class="proof-tbd mono">Suburbs served — to be confirmed</span>
+    <span class="proof-area mono">Servicing Perth metro</span>
   </div>
 </div>
 
@@ -376,9 +374,9 @@ footer{padding:60px 0 40px;}
         <p>Projects completed</p>
       </div>
       <div class="num">
-        <h3 class="tbd">TBD</h3>
+        <h3>Metro</h3>
         <div class="ln"></div>
-        <p>Suburbs serviced</p>
+        <p>Perth-wide service area</p>
       </div>
     </div>
   </div>
@@ -424,10 +422,9 @@ footer{padding:60px 0 40px;}
       <span class="eyebrow light"><span class="dot"></span>Get a site visit</span>
       <h2>Tell us about your garden. We'll come and look at it.</h2>
       <div class="btn-row">
-        <a href="#" class="btn primary">Start your project <span class="arr"><svg class="ico-arr" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="8 7 17 7 17 16"/></svg></span></a>
+        <a href="https://form.jotform.com/260408375301046" target="_blank" rel="noopener" class="btn primary">Start your project <span class="arr"><svg class="ico-arr" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="8 7 17 7 17 16"/></svg></span></a>
         <a href="mailto:hello@beckslandscaping.com.au" class="btn ghost">Email hello@beckslandscaping.com.au</a>
       </div>
-      <p class="cta-note mono">Project intake form link is a placeholder pending the real form URL. Email is live.</p>
     </div>
   </div>
 </section>
@@ -444,8 +441,8 @@ footer{padding:60px 0 40px;}
       <div class="foot-col">
         <h5>Contact</h5>
         <div class="contact-row tbd"><span class="i">✉</span>Email to be confirmed</div>
-        <div class="contact-row tbd"><span class="i">✆</span>Phone to be confirmed</div>
-        <div class="contact-row tbd"><span class="i">⌖</span>Suburbs to be confirmed</div>
+        <div class="contact-row"><span class="i">✆</span><a href="tel:+61438456320">0438 456 320</a></div>
+        <div class="contact-row"><span class="i">⌖</span>Perth metro</div>
         <div class="contact-row"><span class="i">⊕</span>www.beckslandscaping.com.au</div>
         <div class="contact-row tbd"><span class="i">◎</span>Instagram to be confirmed</div>
       </div>
