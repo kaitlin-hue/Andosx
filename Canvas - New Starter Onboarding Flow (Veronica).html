@@ -9,11 +9,11 @@
 
   :root{
     --ink:#0A0A0A;
-    --cream:#F4EDE3;
-    --cream-tint:#EEE6D8;
-    --stone:#9C8E80;
-    --ash:#5C544C;
-    --soft:#8B8478;
+    --white:#FFFFFF;
+    --hairline:#EAEAEA;
+    --stone:#8E8E8E;
+    --ash:#3D3D3D;
+    --soft:#8E8E8E;
   }
 
   *{ box-sizing:border-box; }
@@ -21,7 +21,7 @@
   html,body{
     margin:0;
     padding:0;
-    background:var(--cream);
+    background:var(--white);
     color:var(--ink);
     font-family:'Montserrat', Helvetica, Arial, sans-serif;
     font-weight:400;
@@ -37,7 +37,7 @@
   /* Cover */
   .cover{
     background:var(--ink);
-    color:var(--cream);
+    color:var(--white);
     padding:80px 0 64px;
   }
   .cover .page{ text-align:left; }
@@ -75,17 +75,17 @@
     font-weight:400;
     font-size:13px;
     line-height:1.6;
-    color:#D8D0C2;
+    color:#C7C7C7;
     max-width:520px;
     margin:0;
   }
 
   /* Section rhythm */
   section{ padding:56px 0; }
-  section.tint{ background:#EFE8DB; }
+  section.tint{ background:#F7F7F7; }
   .divider{
     border:none;
-    border-top:0.75pt solid var(--cream-tint);
+    border-top:0.75pt solid var(--hairline);
     margin:0;
   }
 
@@ -135,7 +135,7 @@
     font-size:10.5pt;
     line-height:1.45;
     padding:16px 14px 16px 0;
-    border-bottom:0.5pt solid var(--cream-tint);
+    border-bottom:0.5pt solid var(--hairline);
     vertical-align:top;
   }
   tbody tr:last-child td{ border-bottom:1pt solid var(--ink); }
@@ -146,7 +146,7 @@
   /* Templates */
   .template{
     padding:36px 0;
-    border-bottom:0.5pt solid var(--cream-tint);
+    border-bottom:0.5pt solid var(--hairline);
   }
   .template:last-child{ border-bottom:none; }
   .template-number{
@@ -169,8 +169,8 @@
     margin:0 0 20px 0;
   }
   .email{
-    background:var(--cream);
-    border:0.75pt solid var(--cream-tint);
+    background:var(--white);
+    border:0.75pt solid var(--hairline);
     padding:24px 28px;
   }
   .email .field{
@@ -208,7 +208,7 @@
 
   .trigger-callout{
     background:var(--ink);
-    color:var(--cream);
+    color:var(--white);
     padding:32px 36px;
     margin-top:32px;
   }
@@ -229,7 +229,7 @@
   .trigger-callout-body{
     font-size:11pt;
     line-height:1.6;
-    color:#D8D0C2;
+    color:#C7C7C7;
     margin:0;
   }
 
@@ -268,7 +268,7 @@
     h2{ font-size:24px; }
     table, thead, tbody, th, td, tr{ display:block; }
     thead{ display:none; }
-    tbody tr{ border-bottom:0.5pt solid var(--cream-tint); padding:14px 0; }
+    tbody tr{ border-bottom:0.5pt solid var(--hairline); padding:14px 0; }
     tbody td{ padding:2px 0; border-bottom:none; }
     td.trigger{ width:auto; }
     td.trigger::before{ content:"Trigger: "; color:var(--stone); font-weight:600; }
