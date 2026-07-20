@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Canvas · New Starter Onboarding Flow · Veronica</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+  :root{
+    --ink:#0A0A0A;
+    --cream:#F4EDE3;
+    --cream-tint:#EEE6D8;
+    --stone:#9C8E80;
+    --ash:#5C544C;
+    --soft:#8B8478;
+  }
+
+  *{ box-sizing:border-box; }
+
+  html,body{
+    margin:0;
+    padding:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Montserrat', Helvetica, Arial, sans-serif;
+    font-weight:400;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .page{
+    max-width:920px;
+    margin:0 auto;
+    padding:0 40px;
+  }
+
+  /* Cover */
+  .cover{
+    background:var(--ink);
+    color:var(--cream);
+    padding:80px 0 64px;
+  }
+  .cover .page{ text-align:left; }
+  .wordmark{
+    font-weight:300;
+    font-size:34px;
+    letter-spacing:0.6em;
+    margin:0 0 6px 0;
+  }
+  .tagline{
+    font-weight:500;
+    font-size:10px;
+    letter-spacing:0.4em;
+    color:var(--stone);
+    text-transform:uppercase;
+    margin:0 0 56px 0;
+  }
+  .cover-eyebrow{
+    font-weight:500;
+    font-size:10px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--stone);
+    margin:0 0 14px 0;
+  }
+  .cover-title{
+    font-weight:400;
+    font-size:40px;
+    letter-spacing:-0.01em;
+    line-height:1.15;
+    margin:0 0 20px 0;
+    max-width:640px;
+  }
+  .cover-sub{
+    font-weight:400;
+    font-size:13px;
+    line-height:1.6;
+    color:#D8D0C2;
+    max-width:520px;
+    margin:0;
+  }
+
+  /* Section rhythm */
+  section{ padding:56px 0; }
+  section.tint{ background:#EFE8DB; }
+  .divider{
+    border:none;
+    border-top:0.75pt solid var(--cream-tint);
+    margin:0;
+  }
+
+  .eyebrow{
+    font-weight:500;
+    font-size:10px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--stone);
+    margin:0 0 12px 0;
+  }
+  h2{
+    font-weight:400;
+    font-size:30px;
+    letter-spacing:-0.01em;
+    margin:0 0 20px 0;
+    line-height:1.2;
+  }
+  p{
+    font-size:11pt;
+    line-height:1.6;
+    margin:0 0 16px 0;
+  }
+  .dot-list{
+    font-size:11pt;
+    color:var(--ash);
+  }
+
+  /* Timeline table */
+  table{
+    width:100%;
+    border-collapse:collapse;
+    margin:24px 0 8px 0;
+  }
+  thead th{
+    text-align:left;
+    font-weight:600;
+    font-size:9pt;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--stone);
+    border-top:1pt solid var(--ink);
+    border-bottom:1pt solid var(--ink);
+    padding:12px 14px 12px 0;
+  }
+  tbody td{
+    font-size:10.5pt;
+    line-height:1.45;
+    padding:16px 14px 16px 0;
+    border-bottom:0.5pt solid var(--cream-tint);
+    vertical-align:top;
+  }
+  tbody tr:last-child td{ border-bottom:1pt solid var(--ink); }
+  td.trigger{ font-weight:600; width:26%; }
+  td.sender{ color:var(--ash); width:16%; }
+  td.ref{ color:var(--stone); font-weight:600; width:10%; white-space:nowrap; }
+
+  /* Templates */
+  .template{
+    padding:36px 0;
+    border-bottom:0.5pt solid var(--cream-tint);
+  }
+  .template:last-child{ border-bottom:none; }
+  .template-number{
+    font-weight:600;
+    font-size:9pt;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--stone);
+    margin:0 0 8px 0;
+  }
+  .template-title{
+    font-weight:600;
+    font-size:16px;
+    margin:0 0 4px 0;
+  }
+  .template-meta{
+    font-size:9.5pt;
+    color:var(--ash);
+    font-style:italic;
+    margin:0 0 20px 0;
+  }
+  .email{
+    background:var(--cream);
+    border:0.75pt solid var(--cream-tint);
+    padding:24px 28px;
+  }
+  .email .field{
+    font-size:9pt;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--stone);
+    font-weight:600;
+    margin:0 0 4px 0;
+  }
+  .email .subject{
+    font-size:12.5px;
+    font-weight:600;
+    margin:0 0 18px 0;
+  }
+  .email .body p{
+    font-size:11pt;
+    line-height:1.6;
+    margin:0 0 14px 0;
+  }
+  .email .body p:last-child{ margin-bottom:0; }
+  .email .sig{
+    font-size:11pt;
+    line-height:1.5;
+    color:var(--ash);
+  }
+  .email .sig .name{ font-weight:600; color:var(--ink); }
+
+  .note{
+    font-size:9.5pt;
+    color:var(--soft);
+    font-style:italic;
+    margin-top:14px;
+  }
+
+  /* Footer */
+  footer{
+    padding:28px 0 48px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+  .footer-mark{
+    font-weight:700;
+    font-size:11pt;
+  }
+  .footer-label{
+    font-weight:500;
+    font-size:8pt;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--stone);
+  }
+
+  @media (max-width:640px){
+    .page{ padding:0 22px; }
+    .cover{ padding:56px 0 44px; }
+    .cover-title{ font-size:30px; }
+    h2{ font-size:24px; }
+    table, thead, tbody, th, td, tr{ display:block; }
+    thead{ display:none; }
+    tbody tr{ border-bottom:0.5pt solid var(--cream-tint); padding:14px 0; }
+    tbody td{ padding:2px 0; border-bottom:none; }
+    td.trigger{ width:auto; }
+    td.trigger::before{ content:"Trigger: "; color:var(--stone); font-weight:600; }
+    td.sender::before{ content:"Sender: "; color:var(--stone); font-weight:600; }
+    td.ref::before{ content:"Template: "; color:var(--stone); font-weight:600; }
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="page">
+    <p class="wordmark">CANVAS.</p>
+    <p class="tagline">COSMETIC CLINIC</p>
+    <p class="cover-eyebrow">ONBOARDING FLOW</p>
+    <h1 class="cover-title">Veronica's first ninety days, timed and templated.</h1>
+    <p class="cover-sub">The Position Description, Welcome Book and probation review pack already hold the substance. This is the spine underneath them: when each touchpoint fires, who sends it, and the exact words to send.</p>
+  </div>
+</div>
+
+<section>
+  <div class="page">
+    <p class="eyebrow">HOW THIS WORKS</p>
+    <h2>One flow, the same shape every hire.</h2>
+    <p>Nine triggers, from the day the contract is countersigned through to Day 90. Each trigger has a fixed timing, a named sender, and a template below it. The dates change with every new starter. The words do not.</p>
+    <p>Timing is relative to Veronica's actual start date so the flow can be set up once, in whatever system sends it (a calendar reminder, a Gmail template, or a workflow), and reused for the next hire without rebuilding it.</p>
+  </div>
+</section>
+
+<section class="tint">
+  <div class="page">
+    <p class="eyebrow">01 · THE TIMELINE</p>
+    <h2>Nine triggers, Day 90.</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Trigger</th>
+          <th>Sender</th>
+          <th>Template</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="trigger">Contract countersigned</td>
+          <td class="sender">Sharna</td>
+          <td class="ref">T1</td>
+        </tr>
+        <tr>
+          <td class="trigger">7 days before start (T-7)</td>
+          <td class="sender">Director</td>
+          <td class="ref">T2</td>
+        </tr>
+        <tr>
+          <td class="trigger">Day before start (T-1)</td>
+          <td class="sender">Sharna</td>
+          <td class="ref">T3</td>
+        </tr>
+        <tr>
+          <td class="trigger">Morning of Day 1</td>
+          <td class="sender">Director</td>
+          <td class="ref">T4</td>
+        </tr>
+        <tr>
+          <td class="trigger">End of Week 1 (Friday close)</td>
+          <td class="sender">Director</td>
+          <td class="ref">T5</td>
+        </tr>
+        <tr>
+          <td class="trigger">3 days before Day 30</td>
+          <td class="sender">Director</td>
+          <td class="ref">T6</td>
+        </tr>
+        <tr>
+          <td class="trigger">3 days before Day 60</td>
+          <td class="sender">Director</td>
+          <td class="ref">T6</td>
+        </tr>
+        <tr>
+          <td class="trigger">3 days before Day 90</td>
+          <td class="sender">Director</td>
+          <td class="ref">T6</td>
+        </tr>
+        <tr>
+          <td class="trigger">Day 90 review passed</td>
+          <td class="sender">Sharna</td>
+          <td class="ref">T7</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="note">T6 fires three times, once per milestone. Same template, the bracketed milestone swapped each time. Day 30 reviews Settled, Day 60 reviews Trusted, Day 90 reviews Confirmed, matching the probation pack already built.</p>
+  </div>
+</section>
+
+<section>
+  <div class="page">
+    <p class="eyebrow">02 · THE TEMPLATES</p>
+    <h2>Seven templates, ready to send.</h2>
+    <p>Fields in brackets are the only things that change per send. Everything else is fixed copy.</p>
+
+    <div class="template">
+      <p class="template-number">T1 · Contract countersigned</p>
+      <p class="template-title">Welcome to the team</p>
+      <p class="template-meta">Sender: Sharna · Fires: same day the signed agreement returns</p>
+      <div class="email">
+        <p class="field">Subject</p>
+        <p class="subject">Welcome to Canvas, Veronica</p>
+        <div class="body">
+          <p>Hi Veronica,</p>
+          <p>I am so glad it is you. Your signed agreement is through, and the team could not be more pleased to have you starting with us.</p>
+          <p>Attached is the Canvas Welcome Book. Read it at your own pace, and bring any question it raises with you.</p>
+          <p>[Director name] will be in touch before your first day with the practical details: start time, what to bring, and where to park.</p>
+        </div>
+        <p class="sig">
+          <span class="name">Sharna Hill</span><br>
+          Founder &amp; Director<br>
+          Canvas Cosmetic Clinic
+        </p>
+      </div>
+    </div>
+
+    <div class="template">
+      <p class="template-number">T2 · 7 days before start</p>
+      <p class="template-title">Before your first day</p>
+      <p class="template-meta">Sender: Director · Fires: T-7 days</p>
+      <div class="email">
+        <p class="field">Subject</p>
+        <p class="subject">Before your first day at Canvas</p>
+        <div class="body">
+          <p>Hi Veronica,</p>
+          <p>One week until you start. A few details to hold before then.</p>
+          <p>Start time [8:30am], through the front door. Park anywhere on the street. Dress [uniform / dress code note]. Bring photo ID and your bank details for payroll.</p>
+          <p>Your first day moves at an easy pace: a walk through the clinic, the systems you will use, and time with the team. Nothing to prepare beyond a read of the Welcome Book, if you have not finished it.</p>
+          <p>See you [day], [date].</p>
+        </div>
+        <p class="sig">
+          <span class="name">[Director name]</span><br>
+          Director, Canvas Cosmetic Clinic
+        </p>
+      </div>
+    </div>
+
+    <div class="template">
+      <p class="template-number">T3 · Day before start</p>
+      <p class="template-title">See you tomorrow</p>
+      <p class="template-meta">Sender: Sharna · Fires: T-1 day, short and warm</p>
+      <div class="email">
+        <p class="field">Subject</p>
+        <p class="subject">See you tomorrow</p>
+        <div class="body">
+          <p>Hi Veronica,</p>
+          <p>Tomorrow is the day. The team is looking forward to it, and so am I.</p>
+          <p>Come as you are. Everything else, we will walk through together.</p>
+        </div>
+        <p class="sig">
+          <span class="name">Sharna</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="template">
+      <p class="template-number">T4 · Morning of Day 1</p>
+      <p class="template-title">Today's the day</p>
+      <p class="template-meta">Sender: Director · Fires: morning of Day 1, ahead of arrival</p>
+      <div class="email">
+        <p class="field">Subject</p>
+        <p class="subject">Today's the day</p>
+        <div class="body">
+          <p>Morning Veronica,</p>
+          <p>A quick note before you head in. We are expecting you at [8:30am]. [Team member name] will meet you at the door.</p>
+          <p>Any question this morning, call or text [number].</p>
+        </div>
+        <p class="sig">
+          <span class="name">[Director name]</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="template">
+      <p class="template-number">T5 · End of Week 1</p>
+      <p class="template-title">Your first week at Canvas</p>
+      <p class="template-meta">Sender: Director · Fires: Friday close of Week 1, ahead of the first weekly 1:1</p>
+      <div class="email">
+        <p class="field">Subject</p>
+        <p class="subject">Your first week at Canvas</p>
+        <div class="body">
+          <p>Hi Veronica,</p>
+          <p>One week in. Well held.</p>
+          <p>Friday close is when the team runs its weekly 1:1: the state of the week, what came up, and what next week holds. We will run the first one together at [time].</p>
+          <p>Bring anything you noticed this week, however small.</p>
+        </div>
+        <p class="sig">
+          <span class="name">[Director name]</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="template">
+      <p class="template-number">T6 · Milestone review, reused at Day 30 / 60 / 90</p>
+      <p class="template-title">Your Day [30 / 60 / 90] review</p>
+      <p class="template-meta">Sender: Director · Fires: T-3 days before each of Day 30, Day 60, Day 90</p>
+      <div class="email">
+        <p class="field">Subject</p>
+        <p class="subject">Your Day [30 / 60 / 90] review</p>
+        <div class="body">
+          <p>Hi Veronica,</p>
+          <p>You are coming up to Day [30 / 60 / 90] with Canvas. Time for the [foundations / rhythm / confirm] conversation, against the Position Description.</p>
+          <p>Scheduled for [date] at [time], [duration]. Nothing to prepare. Bring what has felt settled, and what has not.</p>
+        </div>
+        <p class="sig">
+          <span class="name">[Director name]</span>
+        </p>
+      </div>
+      <p class="note">Day 30 reviews Settled, foundations. Day 60 reviews Trusted, rhythm. Day 90 reviews Confirmed, confirm. Swap the bracketed pair, the rest of the template holds.</p>
+    </div>
+
+    <div class="template">
+      <p class="template-number">T7 · Day 90 review passed</p>
+      <p class="template-title">The role is yours</p>
+      <p class="template-meta">Sender: Sharna · Fires: same day Day 90 review is confirmed</p>
+      <div class="email">
+        <p class="field">Subject</p>
+        <p class="subject">The role is yours</p>
+        <div class="body">
+          <p>Hi Veronica,</p>
+          <p>Ninety days in. Confirmed.</p>
+          <p class="dot-list" style="margin:0 0 14px 0; font-size:11pt;">Show up clinic ready &middot; Open to growth &middot; You get back what you give &middot; Do what you said you would. That is the Canvas standard, and it is yours to hold now.</p>
+          <p>The role belongs to you. The work keeps growing with you, and Canvas keeps the shape it has because you hold it that way.</p>
+        </div>
+        <p class="sig">
+          <span class="name">Sharna Hill</span><br>
+          Founder &amp; Director<br>
+          Canvas Cosmetic Clinic
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="tint">
+  <div class="page">
+    <p class="eyebrow">03 · WHAT THIS ASSUMES</p>
+    <h2>Fill before this goes live.</h2>
+    <p class="dot-list">Veronica's confirmed start date &middot; her exact start time and dress code &middot; the Director's name for signature lines &middot; the weekly 1:1 day and time &middot; who meets her at the door on Day 1.</p>
+    <p class="note">Once those are set, T6's three sends and the Day 90 confirmation date fall out automatically as T-3, T-3, T-3 and Day 90 from the start date. No other document changes.</p>
+  </div>
+</section>
+
+<hr class="divider">
+<footer>
+  <div class="page" style="display:flex; justify-content:space-between; width:100%;">
+    <span class="footer-mark">Canvas.</span>
+    <span class="footer-label">Onboarding Flow</span>
+  </div>
+</footer>
+
+</body>
+</html>
