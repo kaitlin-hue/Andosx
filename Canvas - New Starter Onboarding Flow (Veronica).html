@@ -206,6 +206,42 @@
     margin-top:14px;
   }
 
+  .trigger-callout{
+    background:var(--ink);
+    color:var(--cream);
+    padding:32px 36px;
+    margin-top:32px;
+  }
+  .trigger-callout-label{
+    font-weight:600;
+    font-size:9pt;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--stone);
+    margin:0 0 12px 0;
+  }
+  .trigger-callout-title{
+    font-weight:400;
+    font-size:20px;
+    letter-spacing:-0.01em;
+    margin:0 0 14px 0;
+  }
+  .trigger-callout-body{
+    font-size:11pt;
+    line-height:1.6;
+    color:#D8D0C2;
+    margin:0;
+  }
+
+  .master-flag{
+    display:block;
+    font-weight:400;
+    font-style:italic;
+    color:var(--stone);
+    font-size:9pt;
+    margin-top:4px;
+  }
+
   /* Footer */
   footer{
     padding:28px 0 48px;
@@ -257,15 +293,20 @@
   <div class="page">
     <p class="eyebrow">HOW THIS WORKS</p>
     <h2>One flow, the same shape every hire.</h2>
-    <p>Nine triggers, from the day the contract is countersigned through to Day 90. Each trigger has a fixed timing, a named sender, and a template below it. The dates change with every new starter. The words do not.</p>
+    <p>Ten triggers, from the day the contract is countersigned through to Day 90. Each trigger has a fixed timing, a named sender, and a template below it. The dates change with every new starter. The words do not.</p>
     <p>Timing is relative to Veronica's actual start date so the flow can be set up once, in whatever system sends it (a calendar reminder, a Gmail template, or a workflow), and reused for the next hire without rebuilding it.</p>
+    <div class="trigger-callout">
+      <p class="trigger-callout-label">THE TRIGGER THAT SETS IT ALL OFF</p>
+      <p class="trigger-callout-title">Contract countersigned, start date confirmed.</p>
+      <p class="trigger-callout-body">This is the one event the whole flow hangs off. The moment the signed agreement returns and Veronica's start date is entered, T-7, T-1, Day 1, the Friday close of Week 1, and Day 30, 60 and 90 all compute from that single date. Set it once, nothing downstream needs a second calculation.</p>
+    </div>
   </div>
 </section>
 
 <section class="tint">
   <div class="page">
     <p class="eyebrow">01 · THE TIMELINE</p>
-    <h2>Nine triggers, Day 90.</h2>
+    <h2>Ten triggers, Day 90.</h2>
     <table>
       <thead>
         <tr>
@@ -276,7 +317,7 @@
       </thead>
       <tbody>
         <tr>
-          <td class="trigger">Contract countersigned</td>
+          <td class="trigger">Contract countersigned<span class="master-flag">the master trigger, every date below runs from here</span></td>
           <td class="sender">Sharna</td>
           <td class="ref">T1</td>
         </tr>
@@ -296,40 +337,104 @@
           <td class="ref">T4</td>
         </tr>
         <tr>
-          <td class="trigger">End of Week 1 (Friday close)</td>
+          <td class="trigger">Day 1, once the safety induction is walked through</td>
           <td class="sender">Director</td>
           <td class="ref">T5</td>
         </tr>
         <tr>
-          <td class="trigger">3 days before Day 30</td>
+          <td class="trigger">End of Week 1 (Friday close)</td>
           <td class="sender">Director</td>
           <td class="ref">T6</td>
+        </tr>
+        <tr>
+          <td class="trigger">3 days before Day 30</td>
+          <td class="sender">Director</td>
+          <td class="ref">T7</td>
         </tr>
         <tr>
           <td class="trigger">3 days before Day 60</td>
           <td class="sender">Director</td>
-          <td class="ref">T6</td>
+          <td class="ref">T7</td>
         </tr>
         <tr>
           <td class="trigger">3 days before Day 90</td>
           <td class="sender">Director</td>
-          <td class="ref">T6</td>
+          <td class="ref">T7</td>
         </tr>
         <tr>
           <td class="trigger">Day 90 review passed</td>
           <td class="sender">Sharna</td>
-          <td class="ref">T7</td>
+          <td class="ref">T8</td>
         </tr>
       </tbody>
     </table>
-    <p class="note">T6 fires three times, once per milestone. Same template, the bracketed milestone swapped each time. Day 30 reviews Settled, Day 60 reviews Trusted, Day 90 reviews Confirmed, matching the probation pack already built.</p>
+    <p class="note">T7 fires three times, once per milestone. Same template, the bracketed milestone swapped each time. Day 30 reviews Settled, Day 60 reviews Trusted, Day 90 reviews Confirmed, matching the probation pack already built.</p>
   </div>
 </section>
 
 <section>
   <div class="page">
-    <p class="eyebrow">02 · THE TEMPLATES</p>
-    <h2>Seven templates, ready to send.</h2>
+    <p class="eyebrow">02 · THE SITE SAFETY INDUCTION</p>
+    <h2>Walked through in person, Day 1.</h2>
+    <p>Before Veronica treats her first patient, the Director walks her through the clinic's site safety induction, in person. This table is the induction sheet: ticked off item by item on the day, then filed and referenced in the confirmation email below (T5), which is what makes the induction a written record rather than a conversation that happened once.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Topic</th>
+          <th>Covers</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="trigger">Emergency exits and assembly point</td>
+          <td>Both exits, the muster point, and the fastest path from every room</td>
+        </tr>
+        <tr>
+          <td class="trigger">Fire extinguishers and fire blanket</td>
+          <td>Locations, and which extinguisher for which fire</td>
+        </tr>
+        <tr>
+          <td class="trigger">First aid</td>
+          <td>Kit location, and [First Aid Officer name], the clinic's First Aid Officer</td>
+        </tr>
+        <tr>
+          <td class="trigger">Incident and hazard reporting</td>
+          <td>How to report, to whom, and within what timeframe</td>
+        </tr>
+        <tr>
+          <td class="trigger">Infection control and clinical waste</td>
+          <td>Sharps disposal, biohazard waste, and hand hygiene stations</td>
+        </tr>
+        <tr>
+          <td class="trigger">Chemical safety</td>
+          <td>The SDS folder location, for every product used in clinic</td>
+        </tr>
+        <tr>
+          <td class="trigger">Manual handling</td>
+          <td>Safe positioning and lifting during treatment set-up</td>
+        </tr>
+        <tr>
+          <td class="trigger">PPE</td>
+          <td>What is provided, and when it is worn</td>
+        </tr>
+        <tr>
+          <td class="trigger">Duress and security</td>
+          <td>The duress procedure, and how to raise it</td>
+        </tr>
+        <tr>
+          <td class="trigger">Emergency contacts</td>
+          <td>Who to call, in order, numbers held at reception</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="note">Ten items, walked through once, on Day 1, before floor time. The Director signs the sheet, Veronica signs the sheet, both copies are filed.</p>
+  </div>
+</section>
+
+<section class="tint">
+  <div class="page">
+    <p class="eyebrow">03 · THE TEMPLATES</p>
+    <h2>Eight templates, ready to send.</h2>
     <p>Fields in brackets are the only things that change per send. Everything else is fixed copy.</p>
 
     <div class="template">
@@ -364,7 +469,7 @@
           <p>Hi Veronica,</p>
           <p>One week until you start. A few details to hold before then.</p>
           <p>Start time [8:30am], through the front door. Park anywhere on the street. Dress [uniform / dress code note]. Bring photo ID and your bank details for payroll.</p>
-          <p>Your first day moves at an easy pace: a walk through the clinic, the systems you will use, and time with the team. Nothing to prepare beyond a read of the Welcome Book, if you have not finished it.</p>
+          <p>Your first day moves at an easy pace: a walk through the clinic, your site safety induction, the systems you will use, and time with the team. Nothing to prepare beyond a read of the Welcome Book, if you have not finished it.</p>
           <p>See you [day], [date].</p>
         </div>
         <p class="sig">
@@ -411,7 +516,27 @@
     </div>
 
     <div class="template">
-      <p class="template-number">T5 · End of Week 1</p>
+      <p class="template-number">T5 · Day 1, induction walked through</p>
+      <p class="template-title">Your site safety induction, confirmed</p>
+      <p class="template-meta">Sender: Director &middot; Fires: Day 1, straight after the in-person walkthrough, before floor time</p>
+      <div class="email">
+        <p class="field">Subject</p>
+        <p class="subject">Your site safety induction, Canvas</p>
+        <div class="body">
+          <p>Hi Veronica,</p>
+          <p>This confirms the site safety induction we walked through together this morning.</p>
+          <p>Covered: emergency exits and the assembly point &middot; the fire extinguishers and blanket &middot; first aid, and [First Aid Officer name] as the clinic's First Aid Officer &middot; incident and hazard reporting &middot; infection control and clinical waste &middot; the SDS folder &middot; manual handling &middot; PPE &middot; duress and security &middot; emergency contacts.</p>
+          <p>Reply to this once you have read it through, so we have it on file alongside the signed induction sheet.</p>
+        </div>
+        <p class="sig">
+          <span class="name">[Director name]</span><br>
+          Director, Canvas Cosmetic Clinic
+        </p>
+      </div>
+    </div>
+
+    <div class="template">
+      <p class="template-number">T6 · End of Week 1</p>
       <p class="template-title">Your first week at Canvas</p>
       <p class="template-meta">Sender: Director · Fires: Friday close of Week 1, ahead of the first weekly 1:1</p>
       <div class="email">
@@ -430,7 +555,7 @@
     </div>
 
     <div class="template">
-      <p class="template-number">T6 · Milestone review, reused at Day 30 / 60 / 90</p>
+      <p class="template-number">T7 · Milestone review, reused at Day 30 / 60 / 90</p>
       <p class="template-title">Your Day [30 / 60 / 90] review</p>
       <p class="template-meta">Sender: Director · Fires: T-3 days before each of Day 30, Day 60, Day 90</p>
       <div class="email">
@@ -449,7 +574,7 @@
     </div>
 
     <div class="template">
-      <p class="template-number">T7 · Day 90 review passed</p>
+      <p class="template-number">T8 · Day 90 review passed</p>
       <p class="template-title">The role is yours</p>
       <p class="template-meta">Sender: Sharna · Fires: same day Day 90 review is confirmed</p>
       <div class="email">
@@ -472,12 +597,12 @@
   </div>
 </section>
 
-<section class="tint">
+<section>
   <div class="page">
-    <p class="eyebrow">03 · WHAT THIS ASSUMES</p>
+    <p class="eyebrow">04 · WHAT THIS ASSUMES</p>
     <h2>Fill before this goes live.</h2>
-    <p class="dot-list">Veronica's confirmed start date &middot; her exact start time and dress code &middot; the Director's name for signature lines &middot; the weekly 1:1 day and time &middot; who meets her at the door on Day 1.</p>
-    <p class="note">Once those are set, T6's three sends and the Day 90 confirmation date fall out automatically as T-3, T-3, T-3 and Day 90 from the start date. No other document changes.</p>
+    <p class="dot-list">Veronica's confirmed start date &middot; her exact start time and dress code &middot; the Director's name for signature lines &middot; the weekly 1:1 day and time &middot; who meets her at the door on Day 1 &middot; the First Aid Officer's name and the emergency contact list for the induction sheet.</p>
+    <p class="note">Once those are set, T7's three sends and the Day 90 confirmation date fall out automatically as T-3, T-3, T-3 and Day 90 from the start date. No other document changes.</p>
   </div>
 </section>
 
