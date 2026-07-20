@@ -199,14 +199,14 @@ section{padding:92px 0;}
 @media(max-width:880px){.num-grid{grid-template-columns:1fr 1fr;gap:34px 24px;}}
 
 /* testimonials */
-.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:32px;}
-.testi-card{background:var(--white);border:1px dashed var(--line);border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:16px;min-height:200px;}
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin-top:32px;}
+.testi-card{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:16px;min-height:180px;}
 .testi-mark{font-family:Georgia,"Times New Roman",serif;font-size:44px;line-height:.6;color:var(--green);opacity:.35;}
-.testi-quote{font-size:15px;line-height:1.6;color:var(--mut);font-style:italic;}
+.testi-quote{font-size:15px;line-height:1.6;color:var(--ink);font-style:italic;}
 .testi-meta{display:flex;flex-direction:column;gap:2px;margin-top:auto;}
-.testi-meta b{font-size:14px;font-weight:700;color:var(--mut);}
+.testi-meta b{font-size:14px;font-weight:700;color:var(--ink);}
 .testi-meta span{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--mut);}
-@media(max-width:880px){.testi-grid{grid-template-columns:1fr;}}
+@media(max-width:560px){.testi-grid{grid-template-columns:1fr;}}
 
 /* before / after slider */
 .ba-cap{display:block;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);margin:56px 0 16px;}
@@ -503,18 +503,28 @@ footer{padding:60px 0 40px;}
     <div class="testi-grid reveal">
       <div class="testi-card">
         <span class="testi-mark">&ldquo;</span>
-        <p class="testi-quote">Testimonial pending. A client quote goes here once confirmed.</p>
-        <div class="testi-meta"><b>Name to be confirmed</b><span>Suburb TBD</span></div>
+        <p class="testi-quote">We&rsquo;ve found Greg and his team to be professional, knowledgeable, and his customer service is second to none. Every job is finished to the highest standard.</p>
+        <div class="testi-meta"><b>Jason</b><span>The Retic &amp; Landscape Shop</span></div>
       </div>
       <div class="testi-card">
         <span class="testi-mark">&ldquo;</span>
-        <p class="testi-quote">Testimonial pending. A client quote goes here once confirmed.</p>
-        <div class="testi-meta"><b>Name to be confirmed</b><span>Suburb TBD</span></div>
+        <p class="testi-quote">He&rsquo;s completed comprehensive work for us, including decking, artificial turf, exposed aggregate, cladding and water features. There is no compromise to his workmanship.</p>
+        <div class="testi-meta"><b>Dave</b><span>Two properties, Perth</span></div>
       </div>
       <div class="testi-card">
         <span class="testi-mark">&ldquo;</span>
-        <p class="testi-quote">Testimonial pending. A client quote goes here once confirmed.</p>
-        <div class="testi-meta"><b>Name to be confirmed</b><span>Suburb TBD</span></div>
+        <p class="testi-quote">I couldn&rsquo;t be happier with the result. The travertine paving looks beautiful and feels amazing underfoot, completely transforming the space.</p>
+        <div class="testi-meta"><b>Paula</b><span>Pool &amp; garden renovation</span></div>
+      </div>
+      <div class="testi-card">
+        <span class="testi-mark">&ldquo;</span>
+        <p class="testi-quote">We love it! Thanks so much for an awesome job.</p>
+        <div class="testi-meta"><b>Deborah</b><span>Perth</span></div>
+      </div>
+      <div class="testi-card">
+        <span class="testi-mark">&ldquo;</span>
+        <p class="testi-quote">Thanks again for a wonderful job, I am so pleased with it all.</p>
+        <div class="testi-meta"><b>Joan</b><span>Perth</span></div>
       </div>
     </div>
     <span class="ba-cap">Before &amp; after &middot; drag to compare &middot; from a real Beck's Landscaping job site</span>
