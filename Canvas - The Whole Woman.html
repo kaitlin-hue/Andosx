@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Whole Woman · Canvas Cosmetic Clinic</title>
+<meta name="description" content="One consult. One blood test. Your next twelve months, mapped across skin, hair, weight, hormones and medical aesthetics. Add your name to the Canvas foundation list.">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+  :root{
+    --ink:#0A0A0A; --cream:#F4EDE3; --stone:#9C8E80; --ash:#5C544C;
+    --line-on-ink:rgba(244,237,227,.16); --tint-on-ink:rgba(244,237,227,.05);
+    --line-on-cream:rgba(10,10,10,.1); --tint-on-cream:rgba(10,10,10,.03);
+    --font:'Montserrat',-apple-system,'Helvetica Neue',Helvetica,Arial,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font);background:var(--cream);color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.55}
+  .wrap{max-width:920px;margin:0 auto;padding:0 24px}
+  a{color:inherit}
+  img,svg{display:block;max-width:100%}
+
+  .eyebrow{font-weight:600;letter-spacing:.28em;font-size:11px;text-transform:uppercase;color:var(--stone)}
+  .eyebrow.on-ink{color:var(--stone)}
+
+  /* ---------- nav ---------- */
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(244,237,227,.92);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid var(--line-on-cream)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:76px}
+  .wm{font-weight:300;letter-spacing:.4em;font-size:16px;text-transform:uppercase;line-height:1}
+  .wm .tag{display:block;font-weight:500;letter-spacing:.32em;font-size:8px;color:var(--stone);margin-top:5px}
+  .nav-cta{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--ink);background:var(--ink);color:var(--cream);padding:11px 20px;border-radius:40px;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;white-space:nowrap;transition:transform .2s,background .2s}
+  .nav-cta:hover{transform:translateY(-1px);background:#000}
+
+  /* ---------- hero ---------- */
+  .hero{background:var(--ink);color:var(--cream);padding:64px 0 84px;position:relative;overflow:hidden}
+  .hero .wrap{position:relative;z-index:2}
+  .hero-orbit{position:absolute;right:-180px;top:-160px;width:560px;height:560px;z-index:1;opacity:.9}
+  .hero-eyebrow{color:var(--stone)}
+  .hero h1{font-weight:300;font-size:clamp(2.1rem,6vw,3.6rem);letter-spacing:-.02em;line-height:1.08;margin-top:22px;max-width:14ch}
+  .hero .sub{font-weight:400;font-size:17px;color:#C9BFB0;margin-top:16px;max-width:34ch;line-height:1.6}
+  .hero-list{margin-top:34px;border-top:1px solid var(--line-on-ink);padding-top:22px;display:flex;flex-direction:column;gap:10px;max-width:38ch}
+  .hero-list div{font-size:14px;color:#B3A99A;font-style:italic;padding-left:16px;position:relative}
+  .hero-list div::before{content:"·";position:absolute;left:0;color:var(--stone)}
+  .hero-close{margin-top:26px;font-size:15px;color:#DCD3C4;max-width:36ch}
+  .hero-ask{margin-top:28px;font-weight:500;font-size:19px;letter-spacing:-.005em;max-width:20ch}
+  .hero .btn-row{margin-top:34px}
+
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:15px 26px;border-radius:40px;font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:transform .2s,background .2s}
+  .btn.primary{background:var(--cream);color:var(--ink)}
+  .btn.primary:hover{transform:translateY(-1px);background:#fff}
+  .btn.dark{background:var(--ink);color:var(--cream)}
+  .btn.dark:hover{transform:translateY(-1px);background:#000}
+
+  /* ---------- section base ---------- */
+  section{padding:88px 0}
+  .sec-head{max-width:44ch}
+  .statement{font-weight:300;font-size:clamp(1.7rem,4.4vw,2.6rem);letter-spacing:-.02em;line-height:1.12;margin-top:14px}
+  .lede{font-weight:400;font-size:16px;color:var(--ash);margin-top:16px;max-width:46ch;line-height:1.65}
+
+  /* ---------- steps ---------- */
+  .steps{margin-top:52px;display:grid;grid-template-columns:1fr;gap:16px}
+  @media(min-width:760px){.steps{grid-template-columns:repeat(3,1fr)}}
+  .step{border:1px solid var(--line-on-cream);background:var(--tint-on-cream);border-radius:16px;padding:26px 24px;min-height:150px}
+  .step .no{font-weight:600;letter-spacing:.16em;font-size:11px;color:var(--stone);font-variant-numeric:tabular-nums}
+  .step p{font-weight:400;font-size:15.5px;margin-top:14px;line-height:1.55}
+  .steps-note{margin-top:26px;font-size:14px;color:var(--ash);font-style:italic}
+
+  /* ---------- pillars (ink band) ---------- */
+  .pillars{background:var(--ink);color:var(--cream)}
+  .pillars .eyebrow{color:var(--stone)}
+  .pillars .lede{color:#C9BFB0}
+  .pillar-grid{margin-top:48px;display:grid;grid-template-columns:1fr;gap:12px}
+  @media(min-width:620px){.pillar-grid{grid-template-columns:1fr 1fr}}
+  @media(min-width:960px){.pillar-grid{grid-template-columns:repeat(5,1fr)}}
+  .pillar{border:1px solid var(--line-on-ink);background:var(--tint-on-ink);border-radius:14px;padding:24px 20px;text-align:left}
+  .pillar svg{width:30px;height:30px;stroke:var(--cream)}
+  .pillar h3{font-weight:400;font-size:16px;margin-top:16px;letter-spacing:-.005em}
+  .pillar-close{margin-top:32px;font-size:15px;color:#C9BFB0;max-width:48ch}
+
+  /* ---------- hands / founder ---------- */
+  .hands-grid{margin-top:44px;display:grid;grid-template-columns:1fr;gap:36px;align-items:start}
+  @media(min-width:720px){.hands-grid{grid-template-columns:220px 1fr}}
+  .medallion{width:180px;height:180px;margin:0 auto}
+  @media(min-width:720px){.medallion{margin:0}}
+  .hands-copy p{font-size:15.5px;color:var(--ash);margin-top:14px;line-height:1.65;max-width:50ch}
+  .hands-copy p:first-child{margin-top:0}
+  .hands-copy .credit{margin-top:18px;font-weight:600;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink)}
+  .hands-copy .credit span{display:block;font-weight:500;font-size:11px;letter-spacing:.1em;color:var(--stone);margin-top:4px;text-transform:none;font-style:italic}
+
+  /* ---------- becoming ---------- */
+  .becoming{border-top:1px solid var(--line-on-cream);border-bottom:1px solid var(--line-on-cream)}
+  .becoming .wrap{text-align:center;max-width:640px}
+  .becoming .eyebrow{display:block}
+  .becoming .statement{margin-left:auto;margin-right:auto}
+  .becoming .lede{margin-left:auto;margin-right:auto}
+
+  /* ---------- foundation / form ---------- */
+  .foundation{background:var(--ink);color:var(--cream)}
+  .foundation .eyebrow{color:var(--stone)}
+  .foundation .lede{color:#C9BFB0}
+  .cap-note{margin-top:8px;display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--stone);font-weight:600}
+  .cap-note .dot{width:7px;height:7px;border-radius:50%;background:#9C4B3F;display:inline-block}
+
+  form.list{margin-top:40px;max-width:480px}
+  .field{margin-bottom:16px}
+  .field label{display:block;font-weight:600;letter-spacing:.14em;font-size:10.5px;text-transform:uppercase;color:var(--stone);margin-bottom:8px}
+  .field input{width:100%;background:var(--tint-on-ink);border:1px solid var(--line-on-ink);border-radius:10px;padding:15px 16px;font-family:var(--font);font-size:15px;color:var(--cream);outline:none;transition:border-color .2s,background .2s}
+  .field input::placeholder{color:#8A8175}
+  .field input:focus{border-color:var(--stone);background:rgba(244,237,227,.09)}
+  form.list button{margin-top:6px;width:100%;justify-content:center;border:none;cursor:pointer}
+  .form-note{margin-top:16px;font-size:12.5px;color:#8A8175;line-height:1.5;max-width:40ch}
+  .form-success{display:none;margin-top:40px;max-width:480px;border:1px solid var(--line-on-ink);background:var(--tint-on-ink);border-radius:14px;padding:28px 26px}
+  .form-success.show{display:block}
+  .form-success .t{font-weight:400;font-size:19px}
+  .form-success p{font-size:14px;color:#C9BFB0;margin-top:10px;line-height:1.55}
+  form.list.hide{display:none}
+
+  /* ---------- footer ---------- */
+  footer{background:var(--cream);padding:40px 0 22px;text-align:center}
+  footer .clinic{font-size:13px;color:var(--ash)}
+  .foot-bar{margin-top:26px;padding-top:22px;border-top:1px solid var(--line-on-cream);font-weight:600;letter-spacing:.24em;font-size:10px;text-transform:uppercase;color:var(--stone)}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <div class="wm">Canvas.<span class="tag">Cosmetic Clinic</span></div>
+    <a class="nav-cta" href="#foundation">Add my name</a>
+  </div>
+</header>
+
+<section class="hero">
+  <svg class="hero-orbit" viewBox="0 0 400 400" fill="none">
+    <circle cx="200" cy="200" r="196" stroke="#9C8E80" stroke-opacity=".35"/>
+    <circle cx="200" cy="200" r="150" stroke="#9C8E80" stroke-opacity=".28"/>
+    <circle cx="200" cy="200" r="104" stroke="#9C8E80" stroke-opacity=".22"/>
+    <circle cx="200" cy="200" r="58" stroke="#F4EDE3" stroke-opacity=".5"/>
+  </svg>
+  <div class="wrap">
+    <div class="eyebrow hero-eyebrow">The Whole Woman</div>
+    <h1>You don't feel like yourself.</h1>
+    <p class="sub">And you're not quite sure why. Or you know something is off, so you have been chasing it.</p>
+    <div class="hero-list">
+      <div>A supplement a friend swears by.</div>
+      <div>Something you saw on your feed at 11pm.</div>
+      <div>A drawer of vitamins you bought online and are not sure you should be taking.</div>
+    </div>
+    <p class="hero-close">Bits and pieces, from everywhere. And no one looking at the whole picture with you.</p>
+    <p class="hero-ask">Are you overwhelmed with knowing where to start?</p>
+    <div class="btn-row">
+      <a class="btn primary" href="#foundation">Add my name</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Now imagine the other version</div>
+      <h2 class="statement">One plan. All of you. In one place.</h2>
+      <p class="lede">Someone looks at the whole picture and makes the plan. A plan you do not have to think about.</p>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="no">01</div>
+        <p>One consult, with a team who takes the time to know you.</p>
+      </div>
+      <div class="step">
+        <div class="no">02</div>
+        <p>One blood test, so we are working from what is real, not a guess.</p>
+      </div>
+      <div class="step">
+        <div class="no">03</div>
+        <p>Your next twelve months, mapped for you across all five pillars.</p>
+      </div>
+    </div>
+    <p class="steps-note">Yours to take or leave, at your pace. No pressure, ever.</p>
+  </div>
+</section>
+
+<section class="pillars">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Five pillars, one team</div>
+      <h2 class="statement">Nothing managed in isolation.</h2>
+    </div>
+
+    <div class="pillar-grid">
+      <div class="pillar">
+        <svg viewBox="0 0 32 32" fill="none" stroke-width="1.3"><path d="M16 4c5 4 9 9 9 15a9 9 0 1 1-18 0c0-6 4-11 9-15Z"/></svg>
+        <h3>Skin</h3>
+      </div>
+      <div class="pillar">
+        <svg viewBox="0 0 32 32" fill="none" stroke-width="1.3"><path d="M9 5c2 6-2 8 0 14M16 5c2 6-2 8 0 14M23 5c2 6-2 8 0 14"/></svg>
+        <h3>Hair &amp; Scalp</h3>
+      </div>
+      <div class="pillar">
+        <svg viewBox="0 0 32 32" fill="none" stroke-width="1.3"><path d="M16 6v3M9 9h14l2 15a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L9 9Z"/><path d="M12 14a4 4 0 0 0 8 0"/></svg>
+        <h3>Weight</h3>
+      </div>
+      <div class="pillar">
+        <svg viewBox="0 0 32 32" fill="none" stroke-width="1.3"><circle cx="12" cy="12" r="3.5"/><circle cx="21" cy="12" r="2"/><circle cx="16" cy="22" r="2.5"/><path d="M14.8 14.4 18.6 19M14.3 10.8l4.2-.4"/></svg>
+        <h3>Hormones</h3>
+      </div>
+      <div class="pillar">
+        <svg viewBox="0 0 32 32" fill="none" stroke-width="1.3"><path d="M16 4 27 12l-4 16H9L5 12 16 4Z"/><path d="M16 4v24M5 12h22"/></svg>
+        <h3>Medical Aesthetics</h3>
+      </div>
+    </div>
+
+    <p class="pillar-close">One team looking at all five together, so nothing falls through the gap between them.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Whose hands you are in</div>
+      <h2 class="statement">Expert. And safe.</h2>
+    </div>
+
+    <div class="hands-grid">
+      <svg class="medallion" viewBox="0 0 200 200" fill="none">
+        <circle cx="100" cy="100" r="96" stroke="#9C8E80" stroke-opacity=".4"/>
+        <circle cx="100" cy="100" r="78" stroke="#9C8E80" stroke-opacity=".3"/>
+        <circle cx="100" cy="100" r="60" fill="#0A0A0A"/>
+        <text x="100" y="109" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="30" font-weight="300" fill="#F4EDE3">SH</text>
+      </svg>
+      <div class="hands-copy">
+        <p>The advice you have been chasing came from everywhere. This does not. Your plan is built and read by registered nurses, trained to understand what your body is actually telling us.</p>
+        <p>Canvas is led by Sharna Hill, an AHPRA registered nurse with more than thirty years in practice. Every recommendation is evidence based, every treatment medically sound and safe. Someone qualified holds the whole plan, and answers for it.</p>
+        <div class="credit">Sharna Hill<span>AHPRA Registered Nurse · Director, Canvas Cosmetic Clinic</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="becoming">
+  <div class="wrap">
+    <div class="eyebrow">What Canvas is becoming</div>
+    <h2 class="statement">Canvas is open to everyone.</h2>
+    <p class="lede">The Whole Woman is not a wall, it is a centre. She is what Canvas will be known for, and the care ripples out from her to every patient who comes in.</p>
+  </div>
+</section>
+
+<section class="foundation" id="foundation">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">The foundation list</div>
+      <h2 class="statement">A small group goes first.</h2>
+      <p class="cap-note"><span class="dot"></span>Places are capped</p>
+      <p class="lede">The women who join the foundation group keep their founding place, and their founding rate, as the membership grows. Add your name and we will come to you before we open to anyone else.</p>
+    </div>
+
+    <form class="list" name="whole-woman-foundation" method="POST" data-netlify="true" netlify-honeypot="company" id="whole-woman-form">
+      <input type="hidden" name="form-name" value="whole-woman-foundation">
+      <p style="display:none"><label>Company<input name="company"></label></p>
+
+      <div class="field">
+        <label for="ww-name">Your name</label>
+        <input id="ww-name" name="name" type="text" placeholder="First and last name" required autocomplete="name">
+      </div>
+      <div class="field">
+        <label for="ww-email">Your email</label>
+        <input id="ww-email" name="email" type="email" placeholder="you@email.com" required autocomplete="email">
+      </div>
+      <button type="submit" class="btn dark">Add my name</button>
+    </form>
+
+    <div class="form-success" id="whole-woman-success">
+      <div class="t">Your name is on the list.</div>
+      <p>We will come to you before this opens to anyone else. No pressure, ever.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="clinic">Canvas Cosmetic Clinic · North Perth. Your details stay with us.</div>
+    <div class="foot-bar">The Whole Woman · North Perth</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var form = document.getElementById('whole-woman-form');
+  if(!form) return;
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var data = new FormData(form);
+    var encoded = new URLSearchParams(data).toString();
+    fetch('/', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+      body: encoded
+    }).then(function(){
+      form.classList.add('hide');
+      document.getElementById('whole-woman-success').classList.add('show');
+    }).catch(function(){
+      form.classList.add('hide');
+      document.getElementById('whole-woman-success').classList.add('show');
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
