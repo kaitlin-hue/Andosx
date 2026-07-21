@@ -1,0 +1,10 @@
+# Redirects from the old Wix site's pages to the new one-page site
+/home            /              301
+/services        /#services     301
+/our-services    /#services     301
+/about           /#team         301
+/about-us        /#team         301
+/contact         /#cta          301
+/contact-us      /#cta          301
+/gallery         /#work         301
+/portfolio       /#work         301
