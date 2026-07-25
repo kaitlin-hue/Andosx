@@ -285,6 +285,12 @@ section{padding:92px 0;}
 .ps-card p{font-size:12.5px;color:var(--ink);margin-top:6px;line-height:1.4;}
 .ps-btn{margin:14px 20px 0;background:var(--ink);color:#fff;text-align:center;padding:12px;border-radius:40px;font-size:12.5px;font-weight:600;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif;}
 .receive-caption{text-align:center;font-size:11.5px;color:var(--mut);margin-top:18px;max-width:240px;line-height:1.5;}
+.receive-card{background:var(--green-2);border-radius:24px;padding:64px 48px;}
+.receive-card .statement{color:#fff;}
+.receive-card .receive-list b{color:#fff;}
+.receive-card .receive-list p{color:rgba(255,255,255,.68);}
+.receive-card .receive-caption{color:rgba(255,255,255,.55);}
+@media(max-width:700px){.receive-card{padding:48px 22px;border-radius:20px;}}
 .cta-note{margin-top:22px;font-size:13px;color:#c9c3b0;}
 
 /* footer */
@@ -554,9 +560,11 @@ footer{padding:60px 0 40px;}
 
 <!-- WHAT YOU RECEIVE -->
 <section id="receive" style="padding-top:0;">
-  <div class="wrap receive-grid">
+  <div class="wrap">
+  <div class="receive-card">
+  <div class="receive-grid">
     <div class="receive-copy reveal">
-      <span class="eyebrow"><span class="dot"></span>Working with us</span>
+      <span class="eyebrow light"><span class="dot"></span>Working with us</span>
       <h2 class="statement" style="margin-top:20px;">What you <span class="mut">receive.</span></h2>
       <ul class="receive-list">
         <li><span class="ric">1</span><div><b>A clear brief</b><p>We walk the property together at the site visit and talk through your vision.</p></div></li>
@@ -589,6 +597,8 @@ footer{padding:60px 0 40px;}
       </div>
       <p class="receive-caption">An example of the updates you'll get as your project moves along.</p>
     </div>
+  </div>
+  </div>
   </div>
 </section>
 
