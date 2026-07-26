@@ -48,7 +48,7 @@
   .hero-list div::before{content:"·";position:absolute;left:0;color:var(--label)}
   .hero-close{margin:28px auto 0;font-size:15px;color:var(--body-c);max-width:36ch}
   .hero-ask{margin:30px auto 0;font-weight:500;font-size:20px;letter-spacing:-.005em;color:var(--ink);max-width:22ch}
-  .hero .btn-row{margin-top:36px}
+  .hero .btn-row{margin-top:36px;display:flex;justify-content:center;flex-wrap:wrap;gap:14px}
 
   /* ---------- scroll cue ---------- */
   .scroll-cue{margin-top:64px;display:flex;flex-direction:column;align-items:center;gap:14px}
@@ -129,6 +129,7 @@
   .field input:focus{border-color:var(--ink)}
   form.list button{margin-top:10px;width:100%;justify-content:center;border:none;cursor:pointer}
   .form-note{margin-top:18px;font-size:12.5px;color:#8a8a8a;line-height:1.5;max-width:40ch}
+  .inline-link{color:var(--ink);text-decoration:underline;text-underline-offset:2px}
   .form-success{display:none;margin-top:44px;max-width:440px;border:1px solid var(--line);padding:30px 28px}
   .form-success.show{display:block}
   .form-success .t{font-weight:400;font-size:19px;color:var(--ink)}
@@ -172,6 +173,7 @@
     <p class="hero-ask rv rv-d3">Are you overwhelmed with knowing where to start?</p>
     <div class="btn-row rv rv-d3">
       <a class="btn primary" href="#foundation">Add my name</a>
+      <a class="btn outline" href="https://book.squareup.com/appointments/6kaootn5km7fi1/location/L8BDZV5C7TK22/services/4GOAB2RAXTRFEBHAEUPPW6OQ" target="_blank" rel="noopener">Book a consult</a>
     </div>
     <div class="scroll-cue rv rv-d3">
       <div class="lbl">Scroll</div>
@@ -328,6 +330,8 @@
       <div class="t">Your name is on the list.</div>
       <p>We will come to you before this opens to anyone else. No pressure, ever.</p>
     </div>
+
+    <p class="form-note rv rv-d2">Ready now, rather than waiting? <a class="inline-link" href="https://book.squareup.com/appointments/6kaootn5km7fi1/location/L8BDZV5C7TK22/services/4GOAB2RAXTRFEBHAEUPPW6OQ" target="_blank" rel="noopener">Book a consult directly</a>.</p>
   </div>
 </section>
 
