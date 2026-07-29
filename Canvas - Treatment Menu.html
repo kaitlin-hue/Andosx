@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<title>Canvas Cosmetic Clinic — Treatment Menu</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+  :root{ --ink:#0A0A0A; --cream:#F4EDE3; --stone:#9C8E80; --ash:#5C544C; --line:rgba(10,10,10,.14); }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Montserrat',Arial,sans-serif;color:var(--ink);background:#fff;font-size:10.5px;line-height:1.55}
+  .page{width:190mm;margin:0 auto;padding:16mm 16mm 10mm;page-break-after:always}
+  .page:last-child{page-break-after:avoid}
+  .wm{font-weight:300;letter-spacing:.42em;font-size:15px;text-transform:uppercase}
+  .tag{font-weight:500;letter-spacing:.32em;font-size:7.5px;text-transform:uppercase;color:var(--stone);margin-top:4px}
+  .foot{margin-top:22px;font-weight:500;letter-spacing:.16em;font-size:7.5px;text-transform:uppercase;color:var(--stone);text-align:center}
+
+  /* ---------- cover ---------- */
+  /* No fill colour anywhere on this page - printing is always on ivory stock, so the
+     paper itself provides the tone. A solid background here would just waste ink. */
+  .cover{min-height:257mm;display:flex;flex-direction:column;justify-content:space-between;padding:20mm 16mm;border-top:3px solid var(--ink);border-bottom:3px solid var(--ink)}
+  .cover-mid{margin-top:auto;margin-bottom:auto}
+  .cover-title{font-weight:300;font-size:44px;letter-spacing:-.02em;line-height:1.05;margin-top:10mm;color:var(--ink)}
+  .cover-sub{font-weight:400;font-size:12.5px;color:var(--ash);margin-top:14px;max-width:34ch;line-height:1.6}
+  .cover-foot{font-weight:500;letter-spacing:.18em;font-size:8.5px;text-transform:uppercase;color:var(--stone)}
+  .cover-foot .addr{color:var(--ink);font-weight:600;letter-spacing:.05em;text-transform:none;margin-bottom:6px;display:block;font-size:11px}
+
+  /* ---------- category / section heads ---------- */
+  .cat{display:flex;align-items:baseline;gap:14px;margin-bottom:6mm}
+  .cat .no{font-weight:300;font-size:34px;color:var(--stone);letter-spacing:-.02em}
+  .cat h1{font-weight:300;font-size:26px;letter-spacing:-.01em}
+  .cat-rule{height:1px;background:var(--ink);margin-bottom:8mm}
+
+  .subcat{display:flex;align-items:baseline;gap:9px;margin:9mm 0 4mm}
+  .subcat:first-of-type{margin-top:0}
+  .subcat .no{font-weight:600;font-size:12px;color:var(--stone)}
+  .subcat h2{font-weight:600;font-size:14px;letter-spacing:.01em}
+
+  /* ---------- treatment blocks ---------- */
+  .treat{margin-top:7mm}
+  .treat:first-child{margin-top:0}
+  .treat h3{font-weight:700;font-size:13px;letter-spacing:-.005em}
+  .treat p{font-weight:400;font-size:10.5px;color:var(--ash);margin-top:3.5px;line-height:1.55;max-width:78ch}
+  .prices{margin-top:6px}
+  .priceline{display:flex;align-items:baseline;gap:8px}
+  .priceline .lbl{font-weight:400;font-size:10.5px;white-space:nowrap}
+  .priceline .dots{flex:1;border-bottom:1px dotted var(--stone);position:relative;top:-3px;margin:0 2px}
+  .priceline .amt{font-weight:600;font-size:10.5px;white-space:nowrap}
+  .price-note{font-size:8.5px;color:var(--stone);font-style:italic;text-align:right;margin-top:1px}
+  .flag-fix{display:inline-block;background:#9C4B3F;color:#fff;font-weight:700;letter-spacing:.08em;font-size:6.5px;text-transform:uppercase;padding:2px 6px;border-radius:999px;margin-left:6px;vertical-align:middle}
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="page">
+  <div class="cover">
+    <div>
+      <div class="wm">Canvas.</div>
+      <div class="tag">Cosmetic Clinic</div>
+    </div>
+    <div class="cover-mid">
+      <div class="cover-title">Treatment<br>Menu</div>
+      <div class="cover-sub">Every treatment, plainly priced. Where a price depends on you, a consultation determines it, always.</div>
+    </div>
+    <div class="cover-foot">
+      <span class="addr">156 Vincent Street, North Perth (corner of Fitzgerald Street)</span>
+      canvascosmeticclinic.com.au &nbsp;·&nbsp; @canvascosmeticclinic
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 1 -->
+<div class="page">
+  <div class="cat"><span class="no">1.</span><h1>Injectable Aesthetics</h1></div>
+  <div class="cat-rule"></div>
+
+  <div class="subcat"><span class="no">1.1</span><h2>Wrinkle Relaxation &amp; Volume</h2></div>
+
+  <div class="treat">
+    <h3>Anti-Wrinkle Injections</h3>
+    <p>Treatments that temporarily relax targeted muscle activity to soften dynamic lines and wrinkles. Nuceiva $14 per unit. Dysport $5.50 per unit.</p>
+    <div class="prices">
+      <div class="priceline"><span class="lbl">One area</span><span class="dots"></span><span class="amt">$250 to $300</span></div>
+      <div class="priceline"><span class="lbl">Two areas</span><span class="dots"></span><span class="amt">$420 to $470</span></div>
+      <div class="priceline"><span class="lbl">Three areas</span><span class="dots"></span><span class="amt">$590 to $680</span></div>
+    </div>
+  </div>
+
+  <div class="treat">
+    <h3>Dermal Filler</h3>
+    <p>Dermal fillers, including lip filler, are injectable gels used to restore volume, support facial structure and enhance natural contours.</p>
+    <div class="prices">
+      <div class="priceline"><span class="lbl">Lip filler</span><span class="dots"></span><span class="amt">$620 per ml</span></div>
+      <div class="priceline"><span class="lbl">Dermal filler (other areas)</span><span class="dots"></span><span class="amt">$680 per ml</span></div>
+    </div>
+  </div>
+
+  <div class="treat">
+    <h3>Biostimulators / Bioremodulators</h3>
+    <p>From our mid-twenties, collagen production begins to decline. Biostimulator and bioremodulator injections are designed to stimulate collagen production within the skin and underlying tissues, improving firmness, texture and overall skin quality over time. Results develop gradually across weeks to months. Repeat treatments and maintenance are recommended.</p>
+    <div class="prices">
+      <div class="priceline"><span class="lbl">One treatment (2 vials or syringes)</span><span class="dots"></span><span class="amt">$1,800</span></div>
+      <div class="priceline"><span class="lbl">Additional vial</span><span class="dots"></span><span class="amt">$800</span></div>
+    </div>
+  </div>
+
+  <div class="treat">
+    <h3>Profhilo</h3>
+    <p>Profhilo is an injectable skin remodelling treatment made from hyaluronic acid that deeply hydrates the skin while stimulating collagen and elastin production. It helps improve skin quality, firmness, texture and radiance without adding volume or changing facial shape, making it ideal for those wanting a natural, refreshed appearance.</p>
+    <div class="prices">
+      <div class="priceline"><span class="lbl">1 syringe (2ml)</span><span class="dots"></span><span class="amt">$850</span></div>
+      <div class="priceline"><span class="lbl">2 syringes (4ml)</span><span class="dots"></span><span class="amt">$1,800</span></div>
+      <div class="priceline"><span class="lbl">Additional syringe thereafter</span><span class="dots"></span><span class="amt">$800</span></div>
+    </div>
+  </div>
+
+  <div class="treat">
+    <h3>Exosomes</h3>
+    <p>Exosomes are cellular messengers applied topically to support skin repair, regeneration and rejuvenation. They are also used as growth factors in hair restoration treatments.</p>
+    <div class="prices">
+      <div class="priceline"><span class="lbl">One treatment</span><span class="dots"></span><span class="amt">$550</span></div>
+      <div class="priceline"><span class="lbl">Package of three treatments</span><span class="dots"></span><span class="amt">$1,500</span></div>
+    </div>
+  </div>
+
+  <div class="foot">Canvas Cosmetic Clinic · treatment menu · page 1 of 7</div>
+</div>
+
+<!-- SECTION 1 CONT -->
+<div class="page">
+  <div class="treat">
+    <h3>Threads</h3>
+    <p>Biostimulating threads are inserted beneath the skin using an aseptic technique. As they dissolve, they stimulate collagen production, helping to tighten and strengthen the skin's structure. Thread selection and quantity vary depending on treatment area and desired outcome.</p>
+    <div class="prices">
+      <div class="priceline"><span class="lbl">PDO threads (face or neck)</span><span class="dots"></span><span class="amt">$980</span></div>
+      <div class="priceline"><span class="lbl">Face and neck</span><span class="dots"></span><span class="amt">$1,800</span></div>
+      <div class="priceline"><span class="lbl">Cogged threads (face)</span><span class="dots"></span><span class="amt">$700 to $1,120</span></div>
+    </div>
+  </div>
+
+  <div class="treat">
+    <h3>Rejuran</h3>
+    <p>Rejuran is an injectable polynucleotide derived from wild salmon DNA. Polynucleotides support deep cellular skin remodelling, improving fine lines, scarring, pore size, pigmentation and overall skin texture. A course of three treatments is recommended for optimal results.</p>
+    <div class="prices">
+      <div class="priceline"><span class="lbl">Under eye, per treatment</span><span class="dots"></span><span class="amt">$700</span></div>
+      <div class="priceline"><span class="lbl">Under eye, package of three</span><span class="dots"></span><span class="amt">$2,020</span></div>
+      <div class="priceline"><span class="lbl">Face or neck, per treatment</span><span class="dots"></span><span class="amt">$1,250</span></div>
+      <div class="priceline"><span class="lbl">Face or neck, package of three</span><span class="dots"></span><span class="amt">$3,300</span></div>
+    </div>
+  </div>
+
+  <div class="treat">
+    <h3>PRP / PRF Treatments</h3>
+    <p>Platelet-Rich Plasma and Platelet-Rich Fibrin are autologous regenerative treatments using your own blood. Growth factors are separated via centrifugation and injected or microneedled into the skin to support healing, collagen production and skin rejuvenation. PRF is processed at a slower speed, producing a more potent product suited to delicate areas such as the under-eye region. These treatments are also effective for hair restoration.</p>
+    <div class="prices">
+      <div class="priceline"><span class="lbl">One treatment</span><span class="dots"></span><span class="amt">$550</span></div>
+      <div class="priceline"><span class="lbl">Three treatments</span><span class="dots"></span><span class="amt">$1,500</span></div>
+      <div class="priceline"><span class="lbl">Six treatments</span><span class="dots"></span><span class="amt">$3,000</span></div>
+    </div>
+  </div>
+
+  <div class="foot">Canvas Cosmetic Clinic · treatment menu · page 2 of 7</div>
+</div>
+
+<!-- SECTION 2 -->
+<div class="page">
+  <div class="cat"><span class="no">2.</span><h1>Skin Treatments &amp; Rejuvenation</h1></div>
+  <div class="cat-rule"></div>
+
+  <div class="subcat"><span class="no">2.1</span><h2>Skin Resurfacing &amp; Collagen Induction</h2></div>
+
+  <div class="treat">
+    <h3>Microneedling</h3>
+    <p>Microneedling stimulates collagen and elastin production to improve skin tone, texture and overall quality. It also enhances absorption of active topical ingredients and helps reduce fine lines, pigmentation and textural irregularities. Downtime is minimal.</p>
+    <div class="prices">
+      <div class="priceline"><span class="lbl">One treatment</span><span class="dots"></span><span class="amt">$350</span></div>
+      <div class="priceline"><span class="lbl">Package of three</span><span class="dots"></span><span class="amt">$900</span></div>
+      <div class="priceline"><span class="lbl">Package of six</span><span class="dots"></span><span class="amt">$1,750</span></div>
+    </div>
+  </div>
+
+  <div class="treat">
+    <h3>Radio Frequency Microneedling</h3>
+    <p>This treatment combines microneedling with radiofrequency energy to deliver deeper collagen stimulation. RF energy heats the deeper layers of the skin, improving firmness and skin structure while addressing fine lines, scarring, enlarged pores and mild skin laxity.</p>
+    <div class="prices">
+      <div class="priceline"><span class="lbl">One treatment (face or neck)</span><span class="dots"></span><span class="amt">$600</span></div>
+      <div class="priceline"><span class="lbl">Package of three treatments</span><span class="dots"></span><span class="amt">$1,580</span></div>
+    </div>
+  </div>
+
+  <div class="subcat"><span class="no">2.2</span><h2>Light-Based &amp; Energy Treatments</h2></div>
+
+  <div class="treat">
+    <h3>IPL (Intense Pulsed Light)</h3>
+    <p>IPL delivers targeted pulses of light to address pigmentation, redness and sun damage while improving overall skin clarity and tone.</p>
+    <div class="prices">
+      <div class="priceline"><span class="lbl">Pigment or vascular treatment</span><span class="dots"></span><span class="amt">$350</span></div>
+      <div class="priceline"><span class="lbl">Full face rejuvenation</span><span class="dots"></span><span class="amt">$550</span></div>
+      <div class="priceline"><span class="lbl">Package of three treatments</span><span class="dots"></span><span class="amt">$1,500</span></div>
+    </div>
+  </div>
+
+  <div class="treat">
+    <h3>LED Light Therapy</h3>
+    <p>LED light therapy reduces inflammation and supports skin recovery while stimulating collagen production to improve texture and fine lines. It also enhances cellular repair, accelerates healing, and assists in acne management by targeting acne-causing bacteria and regulating oil production.</p>
+    <div class="prices">
+      <div class="priceline"><span class="lbl">Standalone treatment</span><span class="dots"></span><span class="amt">$80</span></div>
+      <div class="priceline"><span class="lbl">Add-on to any treatment</span><span class="dots"></span><span class="amt">$50</span></div>
+    </div>
+  </div>
+
+  <div class="foot">Canvas Cosmetic Clinic · treatment menu · page 3 of 7</div>
+</div>
+
+<!-- SECTION 2 CONT -->
+<div class="page">
+  <div class="subcat" style="margin-top:0"><span class="no">2.3</span><h2>Skin Quality, Maintenance and Facials</h2></div>
+
+  <div class="treat">
+    <h3>Skin Boosters</h3>
+    <p>Skin boosters are injectable hydration treatments delivered into the dermis to improve skin elasticity, hydration and luminosity. A series of three treatments spaced four weeks apart is recommended.</p>
+    <div class="prices">
+      <div class="priceline"><span class="lbl">Treatment</span><span class="dots"></span><span class="amt">$650</span></div>
+    </div>
+  </div>
+
+  <div class="treat">
+    <h3>Chemical Peels</h3>
+    <p>Customised chemical peels are selected to suit individual skin concerns, including dullness, breakouts, fine lines, or discolouration. There is a peel designed to assist.</p>
+    <div class="prices">
+      <div class="priceline"><span class="lbl">Three peels</span><span class="dots"></span><span class="amt">$420</span></div>
+      <div class="priceline"><span class="lbl">Six peels</span><span class="dots"></span><span class="amt">$860</span></div>
+    </div>
+  </div>
+
+  <div class="treat">
+    <h3>PRX Plus Facial</h3>
+    <p>A non-invasive skin treatment that stimulates collagen and elastin production without needles or visible peeling. The formulation penetrates into the dermis while preserving the skin's surface, improving overall skin quality and firmness. Ideally completed as a course of three treatments.</p>
+    <div class="prices">
+      <div class="priceline"><span class="lbl">Single treatment</span><span class="dots"></span><span class="amt">$350</span></div>
+      <div class="priceline"><span class="lbl">Package of three treatments</span><span class="dots"></span><span class="amt">$1,050</span></div>
+    </div>
+  </div>
+
+  <div class="treat">
+    <h3>Indulgent Facials</h3>
+    <p>Designed to hydrate, rejuvenate and address skin concerns using quality, clinically proven ingredients.</p>
+    <div class="prices">
+      <div class="priceline"><span class="lbl">Treatment</span><span class="dots"></span><span class="amt">$170</span></div>
+    </div>
+  </div>
+
+  <div class="treat">
+    <h3>Sunekos</h3>
+    <p>Sunekos is an advanced injectable skin booster that combines hyaluronic acid and amino acids to stimulate collagen and elastin production. It improves hydration, skin quality, firmness and elasticity while restoring a natural, healthy glow. Ideal for the face, neck and delicate under-eye area.</p>
+    <div class="prices">
+      <div class="priceline"><span class="lbl">First treatment</span><span class="dots"></span><span class="amt">$1,000</span></div>
+      <div class="priceline"><span class="lbl">Second / third treatment</span><span class="dots"></span><span class="amt">$700</span></div>
+      <div class="priceline"><span class="lbl">Three-treatment plan, booked upfront</span><span class="dots"></span><span class="amt">$2,200</span></div>
+    </div>
+  </div>
+
+  <div class="foot">Canvas Cosmetic Clinic · treatment menu · page 4 of 7</div>
+</div>
+
+<!-- SECTION 3 -->
+<div class="page">
+  <div class="cat"><span class="no">3.</span><h1>Health &amp; Body</h1></div>
+  <div class="cat-rule"></div>
+
+  <div class="subcat" style="margin-top:0"><span class="no">3.1</span><h2>Hormonal &amp; Metabolic Health</h2></div>
+
+  <div class="treat">
+    <h3>Women's Health Consultations</h3>
+    <p>Personalised consultations supporting perimenopause and menopause. Appointments provide a dedicated space to discuss symptoms, hormonal changes, lifestyle factors and overall wellbeing, with an evidence-based and holistic approach.</p>
+    <div class="prices">
+      <div class="priceline"><span class="lbl">Initial consultation (up to 1 hour)</span><span class="dots"></span><span class="amt">$350</span></div>
+      <div class="priceline"><span class="lbl">Follow-up / review consultation</span><span class="dots"></span><span class="amt">$250</span></div>
+    </div>
+  </div>
+
+  <div class="treat">
+    <h3>Weight Loss Consultations</h3>
+    <p>Comprehensive consultations focused on sustainable weight management. These appointments explore metabolic health, hormones, lifestyle and nutrition, with ongoing guidance tailored to individual goals and life stage.</p>
+    <div class="prices">
+      <div class="priceline"><span class="lbl">Initial consultation</span><span class="dots"></span><span class="amt">$210</span></div>
+      <div class="priceline"><span class="lbl">Follow-up / review consultation</span><span class="dots"></span><span class="amt">$100</span></div>
+    </div>
+  </div>
+
+  <div class="subcat"><span class="no">3.2</span><h2>Other Medical Treatment</h2></div>
+
+  <div class="treat">
+    <h3>Hayfever &amp; Allergy Treatment</h3>
+    <p>Prescription treatment administered following consultation, with medication individually dosed and delivered via pump spray. A review appointment is included to assess results.</p>
+    <div class="prices">
+      <div class="priceline"><span class="lbl">Treatment</span><span class="dots"></span><span class="amt">$450</span></div>
+    </div>
+  </div>
+
+  <div class="treat">
+    <h3>Masseter Muscle Treatment / Facial Slimming</h3>
+    <p>Botulinum Toxin is injected into the masseter muscle to alleviate symptoms such as teeth grinding, teeth clenching, headaches and other TMJ issues. It also assists aesthetically with facial slimming.</p>
+    <div class="prices">
+      <div class="priceline"><span class="lbl">Treatment</span><span class="dots"></span><span class="amt">$550 to $850</span></div>
+    </div>
+    <div class="price-note">Depending on number of units used. Consultation will determine this.</div>
+  </div>
+
+  <div class="foot">Canvas Cosmetic Clinic · treatment menu · page 5 of 7</div>
+</div>
+
+<!-- SECTION 3 CONT -->
+<div class="page">
+  <div class="treat">
+    <h3>Hyperhidrosis Treatment (excessive sweating)</h3>
+    <p>This treatment uses Botulinum Toxin to stop tiny sweat glands from working close to the skin surface of the area of concern. The medication is injected superficially and is made quite comfortable with the use of topical numbing cream. Commonly treated are under arms, face and hairline.</p>
+    <div class="prices">
+      <div class="priceline"><span class="lbl">Treatment</span><span class="dots"></span><span class="amt">$600 to $900</span></div>
+    </div>
+    <div class="price-note">Depending on number of units used. Consultation will determine this.</div>
+  </div>
+
+  <div class="treat">
+    <h3>Headache Treatment</h3>
+    <p>Following consultation to discuss whether your headaches are due to muscle tension, Botulinum Toxin may be used to alleviate your symptoms and pain.</p>
+    <div class="prices">
+      <div class="priceline"><span class="lbl">Treatment</span><span class="dots"></span><span class="amt">$250 to $600</span></div>
+    </div>
+    <div class="price-note">Depending on number of units used. Consultation will determine this.</div>
+  </div>
+
+  <div class="treat">
+    <h3>Fat Dissolving Injections</h3>
+    <p>Injectable treatments designed to permanently reduce small, localised pockets of stubborn fat. Suitable treatment areas are determined during consultation. Commonly treated is the submental area (double chin).</p>
+    <div class="prices">
+      <div class="priceline"><span class="lbl">Treatment, per area</span><span class="dots"></span><span class="amt">$990</span></div>
+    </div>
+  </div>
+
+  <div class="foot">Canvas Cosmetic Clinic · treatment menu · page 6 of 7</div>
+</div>
+
+<!-- SECTION 4 (fixed heading) -->
+<div class="page">
+  <div class="cat"><span class="no">4.</span><h1>Packages</h1></div>
+  <div class="cat-rule"></div>
+
+  <div class="subcat" style="margin-top:0"><span class="no">4.1</span><h2>Canvas Packages</h2></div>
+
+  <div class="treat">
+    <h3>The Minimalist</h3>
+    <p>A refined introduction to injectable aesthetics, designed to soften expression lines and restore subtle volume. This package suits those seeking a fresh, natural result with minimal intervention and a conservative approach.</p>
+    <div class="prices">
+      <div class="priceline"><span class="lbl">1ml dermal filler + two areas wrinkle relaxer</span><span class="dots"></span><span class="amt">$990</span></div>
+    </div>
+  </div>
+
+  <div class="treat">
+    <h3>The Renaissance</h3>
+    <p>A balanced combination of wrinkle relaxation and volume restoration, ideal for enhancing facial harmony and addressing multiple areas in one treatment plan. This package allows for more noticeable rejuvenation while maintaining natural proportions.</p>
+    <div class="prices">
+      <div class="priceline"><span class="lbl">2ml dermal filler + two areas wrinkle relaxer</span><span class="dots"></span><span class="amt">$1,700</span></div>
+      <div class="priceline"><span class="lbl">Add a third area of wrinkle relaxer</span><span class="dots"></span><span class="amt">$180</span></div>
+    </div>
+  </div>
+
+  <div class="treat">
+    <h3>The Modernist</h3>
+    <p>A comprehensive rejuvenation package designed for structural support, balance and longevity. Suitable for those wanting a more complete refresh, this option focuses on volume restoration and wrinkle softening across key facial areas for a polished, cohesive result.</p>
+    <div class="prices">
+      <div class="priceline"><span class="lbl">3ml dermal filler + two areas wrinkle relaxer</span><span class="dots"></span><span class="amt">$2,350</span></div>
+      <div class="priceline"><span class="lbl">Add a third area of wrinkle relaxer</span><span class="dots"></span><span class="amt">$180</span></div>
+    </div>
+  </div>
+
+  <div class="subcat"><span class="no">4.2</span><h2>Custom Packages</h2></div>
+
+  <div class="treat">
+    <h3>Tailored Packages</h3>
+    <p>Tailored packages are available following consultation to suit individual goals and treatment needs.</p>
+  </div>
+
+  <div class="foot">Canvas Cosmetic Clinic · treatment menu · page 7 of 7</div>
+</div>
+
+<!-- BACK COVER -->
+<div class="page">
+  <div class="cover" style="justify-content:flex-end;align-items:center;text-align:center">
+    <div style="margin-bottom:auto"></div>
+    <img src="data:image/png;base64,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" style="width:34mm;height:34mm;border-radius:3px" alt="QR code to canvascosmeticclinic.com.au">
+    <div style="font-size:7px;letter-spacing:.08em;color:var(--stone);margin-top:6px;text-transform:uppercase">canvascosmeticclinic.com.au</div>
+    <div style="margin-top:14mm;font-weight:700;font-size:13px;color:var(--ink)">156 Vincent Street, North Perth</div>
+    <div style="font-weight:400;font-size:11px;color:var(--ash);margin-top:2px">(corner of Fitzgerald Street)</div>
+    <div style="margin-top:24mm;margin-bottom:6mm;display:flex;gap:26px;font-weight:500;font-size:9px;letter-spacing:.06em;color:var(--stone)">
+      <span>book or visit online</span><span style="color:var(--ink)">canvascosmeticclinic.com.au</span><span>@canvascosmeticclinic</span>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
